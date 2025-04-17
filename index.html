@@ -2,202 +2,976 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn to code online-CodeWithNischal</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="courses.html">
-    <link rel="stylesheet" href="tutorial.html">
-    <style>
-        .sticky>.navbar,
-        .sub-navbar {
-            background: #1F2937;
-        }
+	<title>Narayan Shrestha - Portfolio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        .sub-navbar ul li {
-            list-style: none;
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-        }
-    </style>
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div class="sticky">
-        <div class="navbar">
-            <div class="logo">
-                <!-- <img src="images/logoCWH.png" alt="logo"> -->
-                <img src="images/logoME.png" alt="logo">
-                <h1><b>CodeWithNischal</b></h1>
-            </div>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="tutorial.html">Tutorial</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="notes.html">Notes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="myGear.html">My Gear</a> </li>
-                <li><a href="work.html">Work With Us</a></li>
-                <img src="images/nightMode.png" alt="night">
-                <button class="btn1"><a href="/">Login</a></button>
-                <button class="btn1"><a href="/">Signup</a></button>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">N/S</a>
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+					<li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+					<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
+					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- 
+	<section id="home-section" class="hero">
+		<div class="home-slider owl-carousel">
+			<div class="slider-item">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight order-md-last img"
+							style="background-image:url(images/photo1.png);">
+							<div class="overlay"></div>
+						</div>
+						<div class="one-forth d-flex align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Hello!</span>
+								<h1 class="mb-4 mt-3">I'm <span>Narayan Shrestha</span></h1>
+								<h2 class="mb-4">A Freelance Backend Developer</h2>
+								<p><a href="#contact-section" class="btn btn-primary py-3 px-4">Hire me</a> <a
+										href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My
+										works</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slider-item">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-flex no-gutters slider-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight order-md-last img"
+							style="background-image:url(images/photo5.png);">
+							<div class="overlay"></div>
+						</div>
+						<div class="one-forth d-flex align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Hello!</span>
+								<h1 class="mb-4 mt-3">I'm a <span>Backend Developer</span> based in Nepal</h1>
+								<p><a href="#contact-section" class="btn btn-primary py-3 px-4">Hire me</a> <a
+										href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My
+										works</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	<section id="home-section" class="hero">
+		<div class="home-slider owl-carousel">
+			<!-- First Slide -->
+			<div class="slider-item">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight order-md-last img"
+							style="background-image:url(images/photo1.png);">
+							<div class="overlay"></div>
+						</div>
+						<div class="one-forth d-flex align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Namaste 🙏</span>
+								<h1 class="mb-4 mt-3">I'm <span>Narayan Shrestha</span></h1>
+								<h2 class="mb-4">Laravel Backend Developer & System Builder</h2>
+								<p><a href="#contact-section" class="btn btn-primary py-3 px-4">Hire me</a>
+									<a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">See
+										My Projects</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            </ul>
-        </div>
-        <hr>
-        <div class="sub-navbar">
-
-            <p><a href="/"><ion-icon name="home-outline"></ion-icon></a>
-            </p>
-            <ul>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">JS</a></li>
-                <li><a href="#">C</a></li>
-                <li><a href="#">C++</a></li>
-                <li><a href="#">JAVA</a></li>
-                <li><a href="#">PYTHON</a></li>
-                <li><a href="#">PHP</a></li>
-                <li><a href="#">REACT JS</a> </li>
-            </ul>
-            <p><a href="#"><ion-icon name="search-outline"></ion-icon></a>
-            </p>
-        </div>
-    </div>
-    <hr>
-
-    <div class="container">
-        <div class="detail1">
-            <h1>Welcome to <span><br>CodeWithNischal</span><br>Let's Learn Together.</h1>
-            <p>Confused on which course to take? I have got you <br>covered. Browse courses and find out the best
-                <br>course
-                for
-                you. Its free!
-                Code With nischal is my <br>attempt to teach basics and those coding <br>techniques to people in short
-                time which
-                <br> took me ages to
-                learn.
-            </p>
-            <button class="btn2"><a href="courses.html">Free Courses</a></button>
-            <button class="btn2"><a href="blog.html">Explore Blog</a></button>
-
-        </div>
-        <img src="images/laptop.avif" alt="laptop">
-    </div>
-
-
-    <div class="container2">
-        <h1>Recommended Courses</h1>
-        <div class="manage">
-            <div class="pythonCon">
-                <img src="images/pythonCourse.jpg" alt="py">
-                <div class="padd">
-                    <span><br>FREE COURSE</span>
-                    <h5>Python Tutorials - 100 Days <br> of Code</h5>
-                    <p>Python is one of the most <br>demanded programming <br>languages in the job market. <br>
-                        Surprisingly, it
-                        is
-                        equally
-                        easy <br> to learn
-                        and master Python. <br>Let's commit our 100 days of <br>code to python!</p>
-                </div>
-                <button class="btn3">Start Watching</button>
-            </div>
-            <div class="jsCon">
-                <img src="images/JS_Course.jpg" alt="js">
-                <div class="padd">
-                    <span><br>FREE COURSE</span>
-                    <h5>Ultimate JavaScript <br> Course</h5>
-                    <p>This latest JavaScript course <br> comes with premium <br>curriculum that covers <br>everything
-                        from
-                        basics to <br>
-                        advance. On top of
-                        that, you <br> will get my handwritten notes <br>of JS for completely free. What <br>are you
-                        waiting
-                        for? Just Enroll <br>
-                        Buddy
-
-                        Start Watching</p>
-                    <button class="btn3">Start Watching</button>
-                </div>
-            </div>
-            <div class="reactCon">
-                <img src="images/react-jsCourse.png" alt="react">
-                <div class="padd">
-                    <span><br>FREE COURSE</span>
-                    <h5>React JS Tutorials For <br>Beginners</span>
-                        <p>React is a free and open- <br>source front-end JavaScript <br>library. This series will cover
-                            <br>React
-                            from
-                            starting
-                            to the end. <br> We
-                            will learn react from the <br>ground up!
-                        </p>
-                        <button class="btn3">Start Watching</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container3">
-        <h1>Testimonials</h1>
-        <div class="manage">
-            <div class="part1">
-                <h1>"<br></h1>
-                <span>I don't have words to thank this man, I'm really <br>grateful to have this channel and website in
-                    my
-                    <br>daily
-                    routine. If
-                    you're a mere beginner, then you <br>can trust this guy and can put your time into his <br>content.
-                    I
-                    can assure
-                    you that it'll
-                    be worth it.</span>
-                <h5>Mohit Kumar <br>
-                    <h6>Web Developer</h6>
-                </h5>
-            </div>
-            <div class="part2">
-                <h1>"<br></h1>
-                <span>For everyone who wants to level up their #Coding <br>and #Dev skills - seriously, this channel is
-                    for
-                    <br>you!
-                    Both basic and
-                    advanced stacks are covered on <br> this channel, and one can learn according to his <br>skill
-                    levels.
-                    And the
-                    icing on the cake
-                    is, everything <br>is available for free.</span>
-                <h5>Rakesh Shetty <br>
-                    <h6>Web Developer</h6>
-                </h5>
-            </div>
-        </div>
-    </div>
-    <div class="courses">
-
-    </div>
-    <div class="copyright">
-        <div class="det">
-            <img src="images/logoME.png" alt="logo-blue">
-            <h1>
-                CodeWithNischal |Copyright © 2024 CodeWithNischal.com
-            </h1>
-        </div>
-
-        <div class="icons">
-            <a href="nischal.shrestha.16940599"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://www.instagram.com/nischal_shrestha07/"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://github.com/NischalShrestha07?tab=overview&from=2024-04-01&to=2024-04-30"><ion-icon
-                    name="logo-github"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-        </div>
-    </div>
+			<!-- Second Slide -->
+			<div class="slider-item">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-flex no-gutters slider-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight order-md-last img"
+							style="background-image:url(images/photo5.png);">
+							<div class="overlay"></div>
+						</div>
+						<div class="one-forth d-flex align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Problem Solver</span>
+								<h1 class="mb-4 mt-3">I Build Real-World Web Systems in <span>Laravel</span></h1>
+								<p>
+									<a href="#contact-section" class="btn btn-primary py-3 px-4">Let’s Talk</a>
+									<a href="#services-section" class="btn btn-white btn-outline-white py-3 px-4">What I
+										Do</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 
-    <script src="script.js"></script>
+	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+		<div class="container">
+			<div class="row d-flex">
+				<div class="col-md-6 col-lg-5 d-flex">
+					<div class="img-about img d-flex align-items-stretch">
+						<div class="overlay"></div>
+						<div class="img d-flex align-self-stretch align-items-center"
+							style="background-image:url(images/photo4.png);">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+					<div class="row justify-content-start pb-3">
+						<div class="col-md-12 heading-section ftco-animate">
+							<h1 class="big">About</h1>
+							<h2 class="mb-4">About Me</h2>
+							<p>I'm Narayan Shrestha, a passionate and solution-driven Backend Developer currently
+								pursuing
+								my Bachelor's degree. I specialize in Laravel and have hands-on experience building
+								full-fledged systems including gym management software, dynamic inventory dashboards,
+								and
+								attendance tracking solutions with role-based access control. I enjoy solving real-world
+								problems with code, especially using modern web technologies, REST APIs, and database
+								optimization strategies.</p>
+							<ul class="about-info mt-4 px-md-0 px-2">
+								<li class="d-flex"><span>Name:</span> <span>Narayan Shrestha</span></li>
+								<li class="d-flex"><span>Date of birth:</span> <span>October 27, 2003</span></li>
+								<li class="d-flex"><span>Address:</span> <span>Biratnagar, Nepal</span></li>
+								<li class="d-flex"><span>Email:</span> <span>nischalshrestha800@gmail.com</span></li>
+								<li class="d-flex"><span>Phone: </span> <span>+977-9819375809</span></li>
+								<li class="d-flex"><span>Education:</span> <span>Bachelor's Student (Computer
+										Engineering)</span></li>
+								<li class="d-flex"><span>Specialization:</span> <span>Laravel, Backend Development,
+										APIs</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="counter-wrap ftco-animate d-flex mt-md-3">
+						<div class="text">
+							<p class="mb-4">
+								<span class="number" data-number="60">0</span>
+								<span>Projects Completed</span>
+							</p>
+							<p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ftco-section ftco-no-pb" id="resume-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-10 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Resume</h1>
+					<h2 class="mb-4">Resume</h2>
+					<p>A summary of my education and professional experience in backend development, showcasing my
+						journey
+						in building robust web solutions.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2021-Present</span>
+						<h2>Bachelor's in Computer Engineering</h2>
+						<span class="position">Purbanchal University, Nepal</span>
+						<p class="mt-4">Studied advanced programming, database systems, and software engineering,
+							focusing on backend technologies and algorithms.</p>
+					</div>
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2014-2016</span>
+						<h2>Higher Secondary Education</h2>
+						<span class="position">St. Xavier's College, Nepal</span>
+						<p class="mt-4">Completed science stream with emphasis on computer science and mathematics,
+							building a strong technical foundation.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2025-Present</span>
+						<h2>Backend Developer</h2>
+						<span class="position"><a href="https://itservicenepal.com/" target="_blank">It Service
+								Nepal</a></span>
+						<p class="mt-4">Developed APIs for product management, payment systems, and multi-tenant
+							applications using Laravel, with a focus on secure and scalable solutions.</p>
+					</div>
+					<div class="resume-wrap ftco-animate">
+						<span class="date">10 August-19 February</span>
+						<h2>Laravel Intern</h2>
+						<span class="position">It Service Nepal, Biratnagar</span>
+						<p class="mt-4">Built and maintained backend systems for e-commerce and financial applications,
+							integrating APIs and optimizing MySQL databases.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center mt-5">
+				<div class="col-md-6 text-center ftco-animate">
+					<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- <section class="ftco-section" id="services-section">
+		<div class="container">
+			<div class="row justify-content-center py-5 mt-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Services</h1>
+					<h2 class="mb-4">Services</h2>
+					<p>Specialized backend development services to deliver secure, scalable, and high-performance web
+						applications.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-analysis"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">API Development</h3>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-flasks"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Database Optimization</h3>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Backend Development</h3>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-analysis"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Multi-Tenant Systems</h3>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-flasks"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Payment Integration</h3>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Search Optimization</h3>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	<section class="ftco-section" id="services-section">
+		<div class="container">
+			<div class="row justify-content-center py-5 mt-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Services</h1>
+					<h2 class="mb-4">What I Offer</h2>
+					<p>Focused on clean architecture, performance, and reliability — I help turn complex backend ideas
+						into
+						reality using Laravel and modern PHP practices.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-analysis"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Custom Web Applications</h3>
+							<p>Tailor-made Laravel solutions for startups and businesses, from gym & inventory systems
+								to
+								multi-role platforms.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-flasks"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">RESTful API Development</h3>
+							<p>Scalable APIs for mobile and frontend integrations with token-based or
+								Sanctum-authenticated
+								security layers.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Authentication & Role Management</h3>
+							<p>Secure multi-auth setups for admins, staff, and superadmins with flexible permission
+								control
+								and dashboard views.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-analysis"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Attendance & Tracking Systems</h3>
+							<p>Automated systems with geo-coordinates, real-time tracking, and monthly logs tailored for
+								organizations and institutions.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-flasks"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Performance & Database Tuning</h3>
+							<p>Optimize MySQL queries and Laravel Eloquent logic to reduce load time and improve
+								scalability
+								for large datasets.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a href="#" class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Tech Consulting & Mentoring</h3>
+							<p>Guiding beginners through clean Laravel practices, Git/GitHub workflows, and real-world
+								project architecture.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ftco-section" id="skills-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Skills</h1>
+					<h2 class="mb-4">My Skills</h2>
+					<p>Proficient in modern backend technologies and tools, with a focus on delivering efficient and
+						secure
+						solutions.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>Laravel</h3>
+						<div class="progress">
+							<div class="progress-bar color-1" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+								aria-valuemax="100" style="width:65%">
+								<span>65%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>Php</h3>
+						<div class="progress">
+							<div class="progress-bar color-2" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+								aria-valuemax="100" style="width:65%">
+								<span>65%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>MySQL</h3>
+						<div class="progress">
+							<div class="progress-bar color-3" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+								aria-valuemax="100" style="width:70%">
+								<span>70%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>RESTful APIs</h3>
+						<div class="progress">
+							<div class="progress-bar color-4" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+								aria-valuemax="100" style="width:50%">
+								<span>50%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>Web Development</h3>
+						<div class="progress">
+							<div class="progress-bar color-5" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+								aria-valuemax="100" style="width:60%">
+								<span>60%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>Git & GitHub</h3>
+						<div class="progress">
+							<div class="progress-bar color-6" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+								aria-valuemax="100" style="width:85%">
+								<span>85%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-project" id="projects-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Projects</h1>
+					<h2 class="mb-4">My Projects</h2>
+					<p>Showcasing my expertise in backend development through real-world applications and solutions.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+						style="background-image: url(images/project-4.jpg);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+							<h3><a href="#">Product Import/Export API</a></h3>
+							<span>Built a Laravel-based API for syncing products across multi-tenant databases with user
+								authentication.</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+						style="background-image: url(images/project-5.jpg);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+							<h3><a href="#">Payment Account Search</a></h3>
+							<span>Implemented binary search for efficient client-side filtering of payment accounts in a
+								financial app.</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+						style="background-image: url(images/project-1.jpg);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+							<h3><a href="#">Withdrawal Request System</a></h3>
+							<span>Developed a secure backend with optimized UI for managing withdrawal requests using
+								Laravel.</span>
+						</div>
+					</div>
+					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+						style="background-image: url(images/project-6.jpg);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+							<h3><a href="#">E-Commerce Backend</a></h3>
+							<span>Created a scalable backend with category and subcategory APIs for an online
+								store.</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+								style="background-image: url(images/project-2.jpg);">
+								<div class="overlay"></div>
+								<div class="text text-center p-4">
+									<h3><a href="#">Inventory Management</a></h3>
+									<span>Designed a database-driven system with real-time stock updates using Laravel
+										and
+										MySQL.</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="project img ftco-animate d-flex justify-content-center align-items-center"
+								style="background-image: url(images/project-3.jpg);">
+								<div class="overlay"></div>
+								<div class="text text-center p-4">
+									<h3><a href="#">Theme Customizer</a></h3>
+									<span>Built a dynamic theme customizer with LTR/RTL and light/dark mode
+										options.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- blogs part -->
+	<!-- <section class="ftco-section" id="blog-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Blog</h1>
+					<h2 class="mb-4">My Blog</h2>
+					<p>Sharing insights on backend development, Laravel best practices, and emerging web technologies.
+					</p>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center mb-3 meta">
+								<p class="mb-0">
+									<span class="mr-2">April 15, 2025</span>
+									<a href="#" class="mr-2">Narayan</a>
+									<a href="#" class="meta-chat"><span class="icon-chat"></span> 4</a>
+								</p>
+							</div>
+							<h3 class="heading"><a href="single.html">Mastering Laravel APIs</a></h3>
+							<p>Tips for building secure and scalable APIs with Laravel for mobile and web apps.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center mb-3 meta">
+								<p class="mb-0">
+									<span class="mr-2">March 10, 2025</span>
+									<a href="#" class="mr-2">Narayan</a>
+									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+								</p>
+							</div>
+							<h3 class="heading"><a href="single.html">Binary Search in Web Apps</a></h3>
+							<p>How to implement efficient client-side search for financial applications.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center mb-3 meta">
+								<p class="mb-0">
+									<span class="mr-2">February 25, 2025</span>
+									<a href="#" class="mr-2">Narayan</a>
+									<a href="#" class="meta-chat"><span class="icon-chat"></span> 5</a>
+								</p>
+							</div>
+							<h3 class="heading"><a href="single.html">Multi-Tenant Architecture</a></h3>
+							<p>Strategies for building scalable multi-tenant systems with Laravel.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+
+
+
+	<!-- <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Contact</h1>
+					<h2 class="mb-4">Contact Me</h2>
+					<p>Reach out for project collaborations, inquiries, or to discuss your next big idea.</p>
+				</div>
+			</div>
+			<div class="row d-flex contact-info mb-5">
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-map-signs"></span>
+						</div>
+						<h3 class="mb-4">Address</h3>
+						<p>Biratnagar, Bagmati Province, Nepal</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-phone2"></span>
+						</div>
+						<h3 class="mb-4">Contact Number</h3>
+						<p><a href="tel:+9779841234567">+977 9819375809</a></p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-paper-plane"></span>
+						</div>
+						<h3 class="mb-4">Email Address</h3>
+						<p><a href="mailto:nischalshrestha800@gmail.com">nischalshrestha800@gmail.com</a></p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-globe"></span>
+						</div>
+						<h3 class="mb-4">Website</h3>
+						<p><a href="#">narayanshrestha.dev</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="row no-gutters block-9">
+				<div class="col-md-6 d-flex">
+					<div class="img" style="background-image: url(images/about.jpg);"></div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Contact</h1>
+					<h2 class="mb-4">Get in Touch</h2>
+					<p>Feel free to connect for freelance projects, tech collaborations, mentorship, or if you're
+						building a
+						product and need a reliable backend developer.</p>
+				</div>
+			</div>
+			<div class="row d-flex contact-info mb-5">
+
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-phone2"></span>
+						</div>
+						<h3 class="mb-4">Contact Number</h3>
+						<p><a href="tel:+9779819375809">+977 9819375809</a></p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-paper-plane"></span>
+						</div>
+						<h3 class="mb-4">Email Address</h3>
+						<p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nischalshrestha800@gmail.com"
+								target="_blank">nischalshrestha800@gmail.com</a></p>
+					</div>
+				</div>
+
+
+				<!-- GitHub -->
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-github"></span>
+						</div>
+						<h3 class="mb-4">GitHub</h3>
+						<p><a href="https://github.com/nischalshrestha" target="_blank">github.com/nischalshrestha</a>
+						</p>
+					</div>
+				</div>
+
+				<!-- LinkedIn -->
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-linkedin"></span>
+						</div>
+						<h3 class="mb-4">LinkedIn</h3>
+						<p><a href="https://www.linkedin.com/in/nischalshrestha/"
+								target="_blank">linkedin.com/in/nischalshrestha</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row no-gutters block-9">
+				<div class="col-md-6 d-flex">
+					<div class="img" style="background-image: url(images/photo8.png);"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">About</h2>
+						<p>Passionate about crafting scalable backend solutions with a focus on performance and
+							security.
+							Based in Nepal, I work globally to deliver impactful projects.</p>
+						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+							<li class="ftco-animate"><a href="https://facebook.com/NischalShrestha07"
+									target="_blank"><span class="icon-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="https://www.linkedin.com/in/narayanshrestha07/"
+									target="_blank"><span class="icon-linkedin"></span></a></li>
+							<li class="ftco-animate"><a href="https://github.com/NischalShrestha07"
+									target="_blank"><span class="icon-github"></span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4 ml-md-4">
+						<h2 class="ftco-heading-2">Links</h2>
+						<ul class="list-unstyled">
+							<li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+							<li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+							<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Services</a>
+							</li>
+							<li><a href="#projects-section"><span class="icon-long-arrow-right mr-2"></span>Projects</a>
+							</li>
+							<li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Services</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>API Development</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Database Optimization</a>
+							</li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Backend Development</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Multi-Tenant Systems</a>
+							</li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Payment Integration</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Have a Question?</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><span class="icon icon-map-marker"></span><span class="text">Biratnagar, Koshi
+										Province, Nepal</span></li>
+								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+977
+											9819375809</span></a></li>
+								<li><a href="#"><span class="icon icon-envelope"></span><span
+											class="text">nischalshrestha800@gmail.com</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer> -->
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<!-- About -->
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">About Me</h2>
+						<p>I'm Nischal Shrestha — a Laravel Backend Developer from Nepal. I specialize in building
+							scalable,
+							secure, and performance-driven systems. I’m also passionate about tech communities,
+							mentoring
+							beginners, and contributing to real-world impactful solutions.</p>
+						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+							<li class="ftco-animate"><a href="https://facebook.com/NischalShrestha07"
+									target="_blank"><span class="icon-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="https://www.linkedin.com/in/narayanshrestha07/"
+									target="_blank"><span class="icon-linkedin"></span></a></li>
+							<li class="ftco-animate"><a href="https://github.com/NischalShrestha07"
+									target="_blank"><span class="icon-github"></span></a></li>
+						</ul>
+					</div>
+				</div>
+
+
+				<!-- Services -->
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">What I Do</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>API Development (REST &
+									GraphQL)</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Database Architecture &
+									Optimization</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Multi-Tenant SaaS
+									Systems</a>
+							</li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Authentication & Role
+									Management</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Payment Gateway
+									Integration</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Contact -->
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Let's Connect</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><span class="icon icon-map-marker"></span><span class="text">Biratnagar, Koshi
+										Province,
+										Nepal</span></li>
+								<li><a href="tel:+9779819375809"><span class="icon icon-phone"></span><span
+											class="text">+977 9819375809</span></a></li>
+								<li>
+									<a href="https://mail.google.com/mail/?view=cm&fs=1&to=nischalshrestha800@gmail.com"
+										target="_blank">
+										<span class="icon icon-envelope"></span>
+										<span class="text">nischalshrestha800@gmail.com</span>
+									</a>
+								</li>
+
+								<li><a href="https://nischalshrestha.dev" target="_blank"><span
+											class="icon icon-globe"></span><span
+											class="text">nischalshrestha.dev</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer Bottom -->
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p class="mb-1" style="font-size: 16px;">
+						&copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved.
+					</p>
+					<p class="mb-2" style="font-size: 16px;">
+						<i><b>Thank you for visiting!</b></i>
+					</p>
+					<p style="font-size: 16px;">
+						Crafted with <span style="color: red;">&#10084;</span> by
+						<a href="https://github.com/NischalShrestha07" target="_blank"
+							style="font-weight: bold; text-decoration: none; color: #007bff;">
+							Narayan Shrestha
+						</a>
+						<span>from Nepal</span>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
