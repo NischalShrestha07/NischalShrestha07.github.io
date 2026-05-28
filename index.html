@@ -2,673 +2,2498 @@
 <html lang="en">
 
 <head>
-	<title>Narayan Shrestha - Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Narayan Shrestha — Laravel backend developer portfolio with live GitHub stats, projects, skills, and contribution graph.">
+	<meta property="og:title" content="Narayan Shrestha | Portfolio">
+	<meta property="og:description"
+		content="Laravel backend developer building APIs, admin systems, and product-focused web apps.">
+	<meta property="og:image"
+		content="https://raw.githubusercontent.com/NischalShrestha07/NischalShrestha07.github.io/main/images/photo1.png">
+	<meta name="theme-color" content="#0a1124">
+	<title>Narayan Shrestha | Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+		rel="stylesheet">
+	<style>
+		:root {
+			--bg: #0a1124;
+			--bg-soft: #0e1831;
+			--panel: #0d1730;
+			--panel-2: #111d3a;
+			--line: rgba(87, 123, 255, 0.2);
+			--line-soft: rgba(87, 123, 255, 0.12);
+			--text: #000000;
+			--muted: #a6b6d9;
+			--cyan: #21e5ff;
+			--green: #2ef2aa;
+			--violet: #9857ff;
+			--yellow: #ffd84d;
+			--orange: #ff8a4d;
+			--pink: #ff70c0;
+			--shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+			--shadow-sm: 0 8px 30px rgba(0, 0, 0, 0.2);
+			--contribution-0: #151d38;
+			--contribution-1: #1b4a3a;
+			--contribution-2: #06f241;
+			--contribution-3: #07f326;
+			--contribution-4: #0af038;
+		}
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+		* {
+			box-sizing: border-box;
+		}
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/ionicons.min.css">
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			font-family: "Inter", sans-serif;
+			color: var(--text);
+			background:
+				radial-gradient(circle at top left, rgba(33, 229, 255, 0.08), transparent 20%),
+				radial-gradient(circle at top right, rgba(152, 87, 255, 0.08), transparent 24%),
+				linear-gradient(180deg, #09101f, #0a1124 28%, #0a1124);
+			min-height: 100vh;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		button {
+			font: inherit;
+			cursor: pointer;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+
+		.container {
+			width: min(1020px, calc(100% - 2rem));
+			margin: 0 auto;
+		}
+
+		/* ─── Scroll Animations ─── */
+		.fade-up {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: opacity 0.7s ease, transform 0.7s ease;
+		}
+
+		.fade-up.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.fade-in {
+			opacity: 0;
+			transition: opacity 0.8s ease;
+		}
+
+		.fade-in.visible {
+			opacity: 1;
+		}
+
+		.scale-in {
+			opacity: 0;
+			transform: scale(0.92);
+			transition: opacity 0.6s ease, transform 0.6s ease;
+		}
+
+		.scale-in.visible {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+		/* ─── Header ─── */
+		.site-header {
+			position: sticky;
+			top: 0;
+			z-index: 20;
+			background: rgba(8, 15, 30, 0.86);
+			backdrop-filter: blur(18px);
+			-webkit-backdrop-filter: blur(18px);
+			border-bottom: 1px solid rgba(87, 123, 255, 0.08);
+			transition: background 0.3s;
+		}
+
+		.site-header.scrolled {
+			background: rgba(8, 15, 30, 0.96);
+		}
+
+		.header-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			min-height: 4.3rem;
+		}
+
+		.brand {
+			color: var(--green);
+			font-size: 1.65rem;
+			font-weight: 800;
+			letter-spacing: -0.02em;
+			transition: color 0.2s;
+		}
+
+		.brand:hover {
+			color: var(--cyan);
+		}
+
+		.brand-dot {
+			color: var(--violet);
+		}
+
+		.desktop-nav {
+			display: flex;
+			gap: 1.35rem;
+			font-size: 0.92rem;
+			color: var(--muted);
+		}
+
+		.desktop-nav a {
+			position: relative;
+			transition: color 0.25s;
+		}
+
+		.desktop-nav a::after {
+			content: '';
+			position: absolute;
+			bottom: -4px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: var(--cyan);
+			transition: width 0.3s ease;
+			border-radius: 1px;
+		}
+
+		.desktop-nav a:hover {
+			color: var(--cyan);
+		}
+
+		.desktop-nav a:hover::after {
+			width: 100%;
+		}
+
+		.menu-button {
+			display: none;
+			align-items: center;
+			justify-content: center;
+			min-width: 2.85rem;
+			height: 2.85rem;
+			padding: 0 0.95rem;
+			border: 1px solid var(--line);
+			border-radius: 999px;
+			background: var(--panel);
+			color: var(--text);
+			font-size: 0.85rem;
+			transition: border-color 0.2s, background 0.2s;
+		}
+
+		.menu-button:hover {
+			border-color: var(--cyan);
+			background: rgba(33, 229, 255, 0.08);
+		}
+
+		.mobile-nav {
+			display: none;
+			padding: 0 0 1rem;
+			border-top: 1px solid rgba(87, 123, 255, 0.08);
+		}
+
+		.mobile-nav[data-open="true"] {
+			display: grid;
+		}
+
+		.mobile-nav a {
+			padding: 0.85rem 0;
+			color: var(--muted);
+			transition: color 0.2s;
+		}
+
+		.mobile-nav a:hover {
+			color: var(--cyan);
+		}
+
+		/* ─── Sections ─── */
+		.section {
+			padding: 3.3rem 0 0;
+		}
+
+		.section-label {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 2.1rem;
+			padding: 0 1rem;
+			border: 1px solid rgba(152, 87, 255, 0.38);
+			border-radius: 0.55rem;
+			background: rgba(152, 87, 255, 0.12);
+			color: #efe5ff;
+			font-size: 0.86rem;
+			font-weight: 600;
+			box-shadow: inset 0 0 0 1px rgba(87, 123, 255, 0.08);
+			letter-spacing: 0.01em;
+		}
+
+		.section-label-alt {
+			border-color: rgba(33, 229, 255, 0.3);
+			background: rgba(33, 229, 255, 0.08);
+			color: #d4f5ff;
+		}
+
+		.section-title {
+			margin: 0;
+			font-size: 1.85rem;
+			font-weight: 700;
+			letter-spacing: -0.03em;
+		}
+
+		.section-copy {
+			margin: 0.85rem 0 0;
+			max-width: 42rem;
+			color: var(--muted);
+			line-height: 1.8;
+		}
+
+		.section-center {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1.5rem;
+		}
+
+		/* ─── Hero ─── */
+		.hero {
+			padding-top: 2.6rem;
+		}
+
+		.hero-top {
+			display: grid;
+			grid-template-columns: 0.92fr 1.08fr;
+			gap: 1.2rem;
+			align-items: stretch;
+		}
+
+		.card {
+			border: 1px solid var(--line-soft);
+			border-radius: 0.5rem;
+			background: linear-gradient(180deg, rgba(10, 22, 47, 0.98), rgba(8, 18, 38, 0.98));
+			box-shadow: var(--shadow);
+			transition: border-color 0.3s, box-shadow 0.3s;
+		}
+
+		.card:hover {
+			border-color: rgba(87, 123, 255, 0.25);
+		}
+
+		.profile-card {
+			padding: 2rem 1.6rem 1.55rem;
+			text-align: center;
+		}
+
+		.avatar {
+			width: 7.1rem;
+			height: 7.1rem;
+			margin: 0 auto 1rem;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 4px solid rgba(255, 255, 255, 0.12);
+			background: #14274a;
+			transition: border-color 0.3s, transform 0.3s;
+		}
+
+		.avatar:hover {
+			border-color: var(--cyan);
+			transform: scale(1.03);
+		}
+
+		.profile-card p {
+			margin: 0;
+			color: var(--muted);
+			font-size: 0.92rem;
+			line-height: 1.8;
+		}
+
+		.accent {
+			color: var(--yellow);
+		}
+
+		.social-row {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.75rem;
+			margin-top: 1rem;
+		}
+
+		.social-link {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 1.9rem;
+			height: 1.9rem;
+			color: var(--green);
+			transition: color 0.25s, transform 0.25s;
+		}
+
+		.social-link:hover {
+			color: var(--cyan);
+			transform: translateY(-2px);
+		}
+
+		.resume-button,
+		.view-all-button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 2.2rem;
+			padding: 0 1rem;
+			margin-top: 1rem;
+			border-radius: 999px;
+			border: 1px solid rgba(152, 87, 255, 0.55);
+			background: rgba(152, 87, 255, 0.12);
+			color: #f3ecff;
+			font-size: 0.78rem;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			transition: background 0.25s, border-color 0.25s, transform 0.2s;
+		}
+
+		.resume-button:hover,
+		.view-all-button:hover {
+			background: rgba(152, 87, 255, 0.25);
+			border-color: rgba(152, 87, 255, 0.8);
+			transform: translateY(-1px);
+		}
+
+		/* ─── Code Card ─── */
+		.code-card {
+			overflow: hidden;
+		}
+
+		.code-topbar {
+			display: flex;
+			align-items: center;
+			gap: 0.35rem;
+			height: 2.35rem;
+			padding: 0 1rem;
+			border-bottom: 1px solid var(--line-soft);
+			background: rgba(121, 75, 255, 0.08);
+		}
+
+		.code-topbar span {
+			width: 0.5rem;
+			height: 0.5rem;
+			border-radius: 50%;
+		}
+
+		.code-topbar span:nth-child(1) {
+			background: #ff5f57;
+		}
+
+		.code-topbar span:nth-child(2) {
+			background: #febc2e;
+		}
+
+		.code-topbar span:nth-child(3) {
+			background: #28c840;
+		}
+
+		.code-content {
+			margin: 0;
+			padding: 1.25rem 1.25rem 1.4rem;
+			overflow: auto;
+			color: #d6e3ff;
+			font-size: 0.92rem;
+			line-height: 1.8;
+			font-family: "JetBrains Mono", "Fira Code", monospace;
+		}
+
+		.code-key {
+			color: var(--pink);
+		}
+
+		.code-value {
+			color: var(--green);
+		}
+
+		.code-string {
+			color: #8dddff;
+		}
+
+		.code-array {
+			color: var(--yellow);
+		}
+
+		.code-comment {
+			color: #5a6a8a;
+			font-style: italic;
+		}
+
+		/* ─── About ─── */
+		.about-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.about-text {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.about-text p {
+			margin: 0;
+			color: var(--muted);
+			line-height: 1.8;
+			font-size: 0.93rem;
+		}
+
+		.about-traits {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			margin-top: 0.5rem;
+		}
+
+		.trait-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+			padding: 0.3rem 0.75rem;
+			border-radius: 999px;
+			border: 1px solid rgba(46, 242, 170, 0.2);
+			background: rgba(46, 242, 170, 0.06);
+			color: #c4f5dc;
+			font-size: 0.8rem;
+			font-weight: 500;
+		}
+
+		.trait-badge svg {
+			width: 0.85rem;
+			height: 0.85rem;
+			flex: 0 0 auto;
+		}
+
+		.about-cards {
+			display: grid;
+			gap: 0.75rem;
+		}
+
+		.about-card {
+			padding: 0.9rem 1rem;
+			display: flex;
+			align-items: flex-start;
+			gap: 0.85rem;
+		}
+
+		.about-card-icon {
+			width: 2.2rem;
+			height: 2.2rem;
+			border-radius: 0.4rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex: 0 0 auto;
+		}
+
+		.about-card-icon svg {
+			width: 1.1rem;
+			height: 1.1rem;
+		}
+
+		.about-card-body h4 {
+			margin: 0 0 0.15rem;
+			font-size: 0.88rem;
+			font-weight: 600;
+		}
+
+		.about-card-body p {
+			margin: 0;
+			color: var(--muted);
+			font-size: 0.78rem;
+			line-height: 1.5;
+		}
+
+		.about-card-body .date-tag {
+			display: inline-block;
+			font-size: 0.7rem;
+			font-weight: 600;
+			padding: 0.1rem 0.45rem;
+			border-radius: 0.25rem;
+			margin-bottom: 0.3rem;
+		}
+
+		/* ─── Skills ─── */
+		.skills-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.skills-category h3 {
+			margin: 0 0 0.85rem;
+			font-size: 1rem;
+			color: var(--cyan);
+			font-weight: 600;
+		}
+
+		.skills-items {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.6rem;
+		}
+
+		.skill-chip {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			padding: 0.5rem 0.85rem;
+			border-radius: 0.4rem;
+			border: 1px solid var(--line-soft);
+			background: rgba(255, 255, 255, 0.03);
+			font-size: 0.82rem;
+			color: #dce7ff;
+			transition: all 0.25s;
+		}
+
+		.skill-chip:hover {
+			border-color: var(--cyan);
+			background: rgba(33, 229, 255, 0.06);
+			transform: translateY(-2px);
+			box-shadow: 0 4px 16px rgba(33, 229, 255, 0.1);
+		}
+
+		.skill-chip svg {
+			width: 1rem;
+			height: 1rem;
+			flex: 0 0 auto;
+			opacity: 0.8;
+		}
+
+		/* ─── Stats ─── */
+		.stats-grid {
+			display: grid;
+			gap: 1rem;
+		}
+
+		.stats-overview {
+			display: grid;
+			grid-template-columns: 0.82fr 1.18fr;
+			gap: 1rem;
+			padding: 1.2rem;
+		}
+
+		.stats-list {
+			display: grid;
+			gap: 0.75rem;
+			align-content: start;
+		}
+
+		.stats-name {
+			color: var(--cyan);
+			font-size: 1.5rem;
+			font-weight: 700;
+			letter-spacing: -0.02em;
+		}
+
+		.stat-line {
+			display: flex;
+			align-items: center;
+			gap: 0.55rem;
+			color: #dce7ff;
+			font-size: 0.93rem;
+		}
+
+		.stat-dot {
+			width: 0.6rem;
+			height: 0.6rem;
+			border-radius: 50%;
+			background: var(--green);
+			box-shadow: 0 0 0 0.22rem rgba(46, 242, 170, 0.16);
+			flex: 0 0 auto;
+		}
+
+		.meta-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+		}
+
+		.meta-card {
+			padding: 1.1rem 1.15rem;
+		}
+
+		.meta-card h3 {
+			margin: 0 0 0.8rem;
+			color: var(--cyan);
+			font-size: 1rem;
+		}
+
+		.meta-card ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: grid;
+			gap: 0.55rem;
+			color: #dce7ff;
+			font-size: 0.9rem;
+		}
+
+		.stat-number {
+			color: var(--yellow);
+			font-weight: 700;
+		}
+
+		/* ─── Projects ─── */
+		.repo-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+		}
+
+		.repo-card {
+			padding: 1rem 1.05rem;
+			min-height: 11.4rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+			transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s;
+		}
+
+		.repo-card:hover {
+			border-color: rgba(33, 229, 255, 0.25);
+			transform: translateY(-3px);
+			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+		}
+
+		.repo-card-top {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 0.8rem;
+		}
+
+		.repo-card h3 {
+			margin: 0;
+			color: var(--cyan);
+			font-size: 1.02rem;
+		}
+
+		.repo-link-icon {
+			color: var(--green);
+			font-size: 0.92rem;
+			flex: 0 0 auto;
+			transition: transform 0.25s;
+		}
+
+		.repo-link-icon:hover {
+			transform: translateX(3px);
+		}
+
+		.repo-card p {
+			margin: 0;
+			color: var(--muted);
+			font-size: 0.88rem;
+			line-height: 1.7;
+			flex: 1;
+		}
+
+		.repo-footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0.8rem;
+			color: #d9e7ff;
+			font-size: 0.82rem;
+		}
+
+		.repo-metrics {
+			display: flex;
+			gap: 0.9rem;
+			flex-wrap: wrap;
+		}
+
+		.repo-language {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+			color: #f2eab4;
+		}
+
+		.language-dot {
+			width: 0.45rem;
+			height: 0.45rem;
+			border-radius: 50%;
+			background: var(--yellow);
+		}
+
+		.project-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.4rem;
+			margin-top: auto;
+		}
+
+		.project-tag {
+			display: inline-flex;
+			padding: 0.2rem 0.55rem;
+			border-radius: 0.3rem;
+			font-size: 0.7rem;
+			font-weight: 600;
+			letter-spacing: 0.01em;
+		}
+
+		.project-tag.laravel {
+			background: rgba(255, 45, 32, 0.15);
+			color: #ff6b5a;
+		}
+
+		.project-tag.php {
+			background: rgba(79, 93, 149, 0.2);
+			color: #a0b0e0;
+		}
+
+		.project-tag.mysql {
+			background: rgba(0, 117, 143, 0.2);
+			color: #4db8d0;
+		}
+
+		.project-tag.api {
+			background: rgba(46, 242, 170, 0.12);
+			color: var(--green);
+		}
+
+		.project-tag.rbac {
+			background: rgba(152, 87, 255, 0.18);
+			color: #d4b0ff;
+		}
+
+		.project-tag.tenancy {
+			background: rgba(255, 216, 77, 0.15);
+			color: var(--yellow);
+		}
+
+		.project-tag.js {
+			background: rgba(241, 224, 90, 0.15);
+			color: #f1e05a;
+		}
+
+		.project-tag.vue {
+			background: rgba(65, 184, 131, 0.15);
+			color: #63d6a0;
+		}
+
+		.project-tag.docker {
+			background: rgba(13, 183, 237, 0.15);
+			color: #4dc9f0;
+		}
+
+		.project-tag.redis {
+			background: rgba(220, 60, 50, 0.15);
+			color: #e86a5a;
+		}
+
+		.project-tag.bootstrap {
+			background: rgba(86, 61, 124, 0.18);
+			color: #a68cc7;
+		}
+
+		.project-tag.livewire {
+			background: rgba(248, 112, 0, 0.15);
+			color: #fb8c33;
+		}
+
+		.project-tag.filament {
+			background: rgba(169, 129, 216, 0.18);
+			color: #c9b0e8;
+		}
+
+		.project-tag.jquery {
+			background: rgba(8, 102, 168, 0.15);
+			color: #3d9bdb;
+		}
+
+		.project-tag.nginx {
+			background: rgba(0, 153, 0, 0.15);
+			color: #4dc04d;
+		}
+
+		.project-tag.payment {
+			background: rgba(0, 200, 170, 0.13);
+			color: #4ddbc0;
+		}
+
+		.center-stack {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1.2rem;
+			margin-top: 1rem;
+		}
+
+		/* ─── Languages & Charts ─── */
+		.chart-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+		}
+
+		.image-card,
+		.activity-card {
+			padding: 0.9rem;
+		}
+
+		.image-card img,
+		.activity-card img {
+			width: 100%;
+			border-radius: 0.35rem;
+			border: 1px solid rgba(87, 123, 255, 0.14);
+			background: #0d1730;
+		}
+
+		.language-bars {
+			padding: 1.15rem;
+		}
+
+		.language-bars h3 {
+			margin: 0 0 1rem;
+			color: var(--cyan);
+			font-size: 1rem;
+		}
+
+		.bars-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+		}
+
+		.bar-list {
+			display: grid;
+			gap: 0.7rem;
+		}
+
+		.bar-item {
+			display: grid;
+			gap: 0.3rem;
+		}
+
+		.bar-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			font-size: 0.84rem;
+			color: #dce7ff;
+		}
+
+		.bar-track {
+			width: 100%;
+			height: 0.36rem;
+			border-radius: 999px;
+			background: rgba(255, 255, 255, 0.08);
+			overflow: hidden;
+		}
+
+		.bar-fill {
+			height: 100%;
+			border-radius: inherit;
+			background: linear-gradient(90deg, #3ba5ff, #ffd84d);
+			transition: width 1.2s ease;
+		}
+
+		/* ─── Streak & Mini Stats ─── */
+		.streak-grid {
+			display: grid;
+			grid-template-columns: 0.78fr 1.22fr;
+			gap: 1rem;
+		}
+
+		.streak-strip {
+			padding: 1.15rem;
+		}
+
+		.mini-stats {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0.8rem;
+		}
+
+		.mini-stat {
+			padding: 1rem 0.8rem;
+			border-radius: 0.4rem;
+			border: 1px solid var(--line-soft);
+			background: rgba(255, 255, 255, 0.02);
+			text-align: center;
+			transition: border-color 0.3s, background 0.3s;
+		}
+
+		.mini-stat:hover {
+			border-color: rgba(33, 229, 255, 0.2);
+			background: rgba(33, 229, 255, 0.03);
+		}
+
+		.mini-stat strong {
+			display: block;
+			color: var(--cyan);
+			font-size: 1.45rem;
+			font-weight: 800;
+		}
+
+		.mini-stat span {
+			display: block;
+			margin-top: 0.3rem;
+			color: var(--muted);
+			font-size: 0.8rem;
+			line-height: 1.55;
+		}
+
+		/* ─── Contribution Graph ─── */
+		.contribution-section {
+			margin-top: 2rem;
+		}
+
+		.contribution-card {
+			padding: 1.25rem;
+			overflow: hidden;
+		}
+
+		.contribution-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
+
+		.contribution-header h3 {
+			margin: 0;
+			color: var(--cyan);
+			font-size: 1rem;
+		}
+
+		.contribution-total {
+			font-size: 0.82rem;
+			color: var(--muted);
+		}
+
+		.contribution-total strong {
+			color: var(--text);
+		}
+
+		.contribution-graph {
+			display: flex;
+			gap: 0;
+			overflow-x: auto;
+			padding-bottom: 0.5rem;
+		}
+
+		.contribution-months {
+			display: flex;
+			gap: 0;
+			padding-left: 2rem;
+			margin-bottom: 0.25rem;
+			font-size: 0.65rem;
+			color: var(--muted);
+			font-weight: 500;
+		}
+
+		.contribution-months span {
+			flex: 1;
+			text-align: left;
+		}
+
+		.contribution-grid-wrapper {
+			display: flex;
+		}
+
+		.contribution-day-labels {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+			padding-right: 0.25rem;
+			font-size: 0.6rem;
+			color: var(--muted);
+			line-height: 1;
+			padding-top: 0;
+		}
+
+		.contribution-day-labels span {
+			height: 14px;
+			display: flex;
+			align-items: center;
+			font-size: 0.6rem;
+		}
+
+		.contribution-weeks {
+			display: flex;
+			gap: 3px;
+		}
+
+		.contribution-week {
+			display: flex;
+			flex-direction: column;
+			gap: 3px;
+		}
+
+		.contribution-day-wrap {
+			position: relative;
+		}
+
+		.contribution-day {
+			width: 14px;
+			height: 14px;
+			border-radius: 3px;
+			background: var(--contribution-0);
+			border: 1px solid rgba(255, 255, 255, 0.06);
+			transition: background 0.12s, transform 0.15s, border-color 0.12s;
+			cursor: pointer;
+		}
+
+		.contribution-day:hover {
+			transform: scale(1.35);
+			border-color: rgba(255, 255, 255, 0.4);
+			z-index: 2;
+		}
+
+		.contribution-day.level-1 {
+			background: var(--contribution-1);
+		}
+
+		.contribution-day.level-2 {
+			background: var(--contribution-2);
+		}
+
+		.contribution-day.level-3 {
+			background: var(--contribution-3);
+		}
+
+		.contribution-day.level-4 {
+			background: var(--contribution-4);
+		}
+
+		.contribution-tooltip {
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			bottom: calc(100% + 8px);
+			left: 50%;
+			transform: translateX(-50%);
+			background: #1a2744;
+			color: #f4f8ff;
+			padding: 5px 10px;
+			border-radius: 5px;
+			font-size: 0.72rem;
+			white-space: nowrap;
+			pointer-events: none;
+			z-index: 20;
+			border: 1px solid rgba(87, 123, 255, 0.25);
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+			font-family: "Inter", sans-serif;
+			font-weight: 500;
+			transition: opacity 0.15s, visibility 0.15s;
+			line-height: 1.4;
+		}
+
+		.contribution-tooltip .tt-date {
+			color: var(--muted);
+			font-weight: 400;
+		}
+
+		.contribution-tooltip .tt-count {
+			color: var(--green);
+			font-weight: 600;
+		}
+
+		.contribution-day-wrap:hover .contribution-tooltip {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.contribution-legend {
+			display: flex;
+			align-items: center;
+			gap: 0.35rem;
+			margin-top: 0.85rem;
+			justify-content: flex-end;
+			font-size: 0.7rem;
+			color: var(--muted);
+		}
+
+		.contribution-legend .sample {
+			width: 12px;
+			height: 12px;
+			border-radius: 2px;
+			border: 1px solid rgba(255, 255, 255, 0.06);
+		}
+
+		/* ─── Contact ─── */
+		.contact-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.contact-info {
+			padding: 1.2rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1.2rem;
+		}
+
+		.contact-info h3 {
+			margin: 0;
+			color: var(--cyan);
+			font-size: 1.1rem;
+		}
+
+		.contact-item {
+			display: flex;
+			align-items: center;
+			gap: 0.85rem;
+			color: #dce7ff;
+			font-size: 0.9rem;
+		}
+
+		.contact-item svg {
+			width: 1.1rem;
+			height: 1.1rem;
+			color: var(--green);
+			flex: 0 0 auto;
+		}
+
+		.contact-item a {
+			color: #dce7ff;
+			transition: color 0.2s;
+		}
+
+		.contact-item a:hover {
+			color: var(--cyan);
+		}
+
+		.contact-social {
+			display: flex;
+			gap: 0.6rem;
+			margin-top: 0.5rem;
+		}
+
+		.contact-social a {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 2.2rem;
+			height: 2.2rem;
+			border-radius: 50%;
+			border: 1px solid var(--line-soft);
+			color: var(--muted);
+			transition: all 0.25s;
+		}
+
+		.contact-social a:hover {
+			border-color: var(--cyan);
+			color: var(--cyan);
+			background: rgba(33, 229, 255, 0.08);
+			transform: translateY(-2px);
+		}
+
+		.contact-form {
+			padding: 1.2rem;
+		}
+
+		.contact-form h3 {
+			margin: 0 0 1rem;
+			color: var(--cyan);
+			font-size: 1.1rem;
+		}
+
+		.form-group {
+			margin-bottom: 0.85rem;
+		}
+
+		.form-group label {
+			display: block;
+			font-size: 0.82rem;
+			color: var(--muted);
+			margin-bottom: 0.3rem;
+			font-weight: 500;
+		}
+
+		.form-group input,
+		.form-group textarea {
+			width: 100%;
+			padding: 0.65rem 0.85rem;
+			border: 1px solid var(--line);
+			border-radius: 0.4rem;
+			background: rgba(255, 255, 255, 0.04);
+			color: var(--text);
+			font-family: "Inter", sans-serif;
+			font-size: 0.88rem;
+			transition: border-color 0.25s, background 0.25s;
+			outline: none;
+			box-sizing: border-box;
+		}
+
+		.form-group input:focus,
+		.form-group textarea:focus {
+			border-color: var(--cyan);
+			background: rgba(33, 229, 255, 0.04);
+		}
+
+		.form-group textarea {
+			resize: vertical;
+			min-height: 6rem;
+		}
+
+		.submit-button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			padding: 0.75rem;
+			border: none;
+			border-radius: 0.4rem;
+			background: linear-gradient(135deg, var(--violet), rgba(33, 229, 255, 0.6));
+			color: #fff;
+			font-size: 0.92rem;
+			font-weight: 600;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+
+		.submit-button:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 8px 24px rgba(152, 87, 255, 0.3);
+		}
+
+		/* ─── Footer ─── */
+		.site-footer {
+			margin-top: 4rem;
+			border-top: 1px solid var(--line-soft);
+			padding: 2rem 0;
+		}
+
+		.footer-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.footer-copy {
+			color: var(--muted);
+			font-size: 0.82rem;
+		}
+
+		.footer-links {
+			display: flex;
+			gap: 1rem;
+			font-size: 0.82rem;
+			color: var(--muted);
+		}
+
+		.footer-links a {
+			transition: color 0.2s;
+		}
+
+		.footer-links a:hover {
+			color: var(--cyan);
+		}
+
+		/* ─── Back to Top ─── */
+		.back-to-top {
+			position: fixed;
+			bottom: 1.5rem;
+			right: 1.5rem;
+			width: 2.6rem;
+			height: 2.6rem;
+			border-radius: 50%;
+			border: 1px solid var(--line);
+			background: var(--panel);
+			color: var(--muted);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			transform: translateY(20px);
+			pointer-events: none;
+			transition: opacity 0.3s, transform 0.3s, color 0.2s, border-color 0.2s;
+			z-index: 30;
+		}
+
+		.back-to-top.visible {
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: auto;
+		}
+
+		.back-to-top:hover {
+			color: var(--cyan);
+			border-color: var(--cyan);
+		}
+
+		.back-to-top svg {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+
+		/* ─── Loading ─── */
+		.loading {
+			color: var(--muted);
+			font-size: 0.92rem;
+		}
+
+		/* ─── Responsive ─── */
+		@media (max-width: 900px) {
+
+			.hero-top,
+			.about-grid,
+			.skills-grid,
+			.stats-overview,
+			.meta-grid,
+			.repo-grid,
+			.chart-grid,
+			.streak-grid,
+			.bars-grid,
+			.contact-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.about-cards {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (max-width: 720px) {
+			.desktop-nav {
+				display: none;
+			}
+
+			.menu-button {
+				display: inline-flex;
+			}
+
+			.hero,
+			.section {
+				padding-top: 2.6rem;
+			}
+
+			.mini-stats {
+				grid-template-columns: 1fr;
+			}
+
+			.contribution-graph {
+				overflow-x: auto;
+			}
+
+			.footer-inner {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.contribution-months {
+				padding-left: 1.5rem;
+			}
+		}
+	</style>
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+<body>
+	<header class="site-header" id="siteHeader">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">~N/S~</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
-					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
+			<div class="header-inner">
+				<a class="brand" href="#top">@NischalShrestha<span class="brand-dot">.</span></a>
+				<nav class="desktop-nav" aria-label="Primary navigation">
+					<a href="#about">About</a>
+					<a href="#skills">Skills</a>
+					<a href="#projects">Projects</a>
+					<a href="#stats">Stats</a>
+					<a href="#contributions">Contributions</a>
+					<a href="#contact">Contact</a>
+				</nav>
+				<button class="menu-button" id="menuToggle" type="button" aria-controls="mobileNav"
+					aria-expanded="false">Menu</button>
 			</div>
+			<nav class="mobile-nav" id="mobileNav" data-open="false" aria-label="Mobile navigation">
+				<a href="#about">About</a>
+				<a href="#skills">Skills</a>
+				<a href="#projects">Projects</a>
+				<a href="#stats">Stats</a>
+				<a href="#contributions">Contributions</a>
+				<a href="#contact">Contact</a>
+			</nav>
 		</div>
-	</nav>
-	<section id="home-section" class="hero">
-		<div class="home-slider owl-carousel">
-			<!-- First Slide -->
-			<div class="slider-item">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/photo1.png);">
-							<div class="overlay"></div>
+	</header>
+
+	<main id="top">
+		<!-- ─── Hero ─── -->
+		<section class="hero section">
+			<div class="container">
+				<div class="hero-top">
+					<article class="card profile-card">
+						<img id="profileAvatar" style="padding: 5px;" class="avatar" src="images/photo1.png"
+							alt="Narayan Shrestha profile image">
+						<p id="profileBio">
+							<span class="accent">+</span>
+							Eat. Sleep. php artisan developer. Repeat.
+						</p>
+						<div class="social-row">
+							<a class="social-link" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="GitHub">
+								<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+									<path
+										d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.41-4.04-1.41-.54-1.37-1.33-1.73-1.33-1.73-1.09-.74.08-.72.08-.72 1.2.08 1.84 1.25 1.84 1.25 1.08 1.84 2.82 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.31-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.57.12-3.27 0 0 1.01-.32 3.3 1.23a11.44 11.44 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.67 1.7.25 2.96.12 3.27.77.84 1.24 1.91 1.24 3.22 0 4.62-2.8 5.63-5.48 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.82.58A12 12 0 0 0 12 .5Z">
+									</path>
+								</svg>
+							</a>
+							<a class="social-link" href="https://www.linkedin.com/in/narayanshrestha07/" target="_blank"
+								rel="noreferrer" aria-label="LinkedIn">
+								<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+									<path
+										d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.83v2.05h.06c.53-1 1.83-2.05 3.77-2.05 4.04 0 4.78 2.66 4.78 6.12V23h-4v-7.68c0-1.83-.03-4.18-2.55-4.18-2.55 0-2.94 1.99-2.94 4.05V23h-4V8Z">
+									</path>
+								</svg>
+							</a>
+							<a class="social-link" href="https://facebook.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="Facebook">
+								<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+									<path
+										d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H17V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.5v3h2.8v8h3.2Z">
+									</path>
+								</svg>
+							</a>
+							<a class="social-link" href="mailto:nischalshrestha800@gmail.com" aria-label="Email">
+								<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+									<path
+										d="M2 5h20a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm10 7 8.5-5H3.5L12 12Zm0 2L3 8.5V17h18V8.5L12 14Z">
+									</path>
+								</svg>
+							</a>
 						</div>
-						<div class="one-forth d-flex align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Namaste 🙏</span>
-								<h1 class="mb-4 mt-3">I'm <span>Narayan Shrestha</span></h1>
-								<h2 class="mb-4">Aspiring Laravel Backend Developer</h2>
-								<p><a href="#contact-section" class="btn btn-primary py-3 px-4">Hire me</a>
-									<a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">See
-										My Projects</a>
-								</p>
+						<a class="resume-button" href="CV_NarayanShrestha.pdf" download="CV_NarayanShrestha.pdf">GET
+							RESUME →</a>
+					</article>
+
+					<article class="card code-card">
+						<div class="code-topbar"><span></span><span></span><span></span></div>
+						<pre class="code-content"><code><span class="code-key">const</span> coder = {
+  <span class="code-key">name</span>: <span class="code-string">"Narayan Shrestha"</span>,
+  <span class="code-key">username</span>: <span class="code-string">"NischalShrestha07"</span>,
+  <span class="code-key">company</span>: <span class="code-string" id="codeCompany">"Backend Developer"</span>,
+  <span class="code-key">location</span>: <span class="code-string" id="codeLocation">"Biratnagar, Nepal"</span>,
+  <span class="code-key">followers</span>: <span class="code-value" id="codeFollowers">0</span>,
+  <span class="code-key">following</span>: <span class="code-value" id="codeFollowing">0</span>,
+  <span class="code-key">repos</span>: <span class="code-value" id="codeRepos">0</span>,
+  <span class="code-key">topStack</span>: [<span class="code-array">"Laravel"</span>, <span class="code-array">"PHP"</span>, <span class="code-array">"MySQL"</span>, <span class="code-array">"REST APIs"</span>, <span class="code-array">"RBAC"</span>],
+  <span class="code-key">alsoUse</span>: [<span class="code-array">"JavaScript"</span>, <span class="code-array">"Docker"</span>, <span class="code-array">"GitHub"</span>],
+  <span class="code-key">hireable</span>: <span class="code-value">true</span>
+};</code></pre>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- ─── About ─── -->
+		<section class="section" id="about">
+			<div class="container">
+				<div class="section-center">
+					<span class="section-label">About Me</span>
+				</div>
+				<div class="about-grid fade-up">
+					<div class="about-text">
+						<p>
+							I'm <strong>Narayan Shrestha</strong>, a Computer Engineering
+							student and passionate Backend Developer. I'm dedicated to mastering Laravel, building
+							secure and scalable web systems, and constantly improving my craft.
+						</p>
+						<p>
+							My approach combines technical expertise with creative problem-solving to deliver
+							exceptional results. I believe in continuous learning and staying updated with the latest
+							industry trends.
+						</p>
+						<div class="about-traits">
+							<span class="trait-badge">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12"></polyline>
+								</svg>
+								Problem Solving
+							</span>
+							<span class="trait-badge">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12"></polyline>
+								</svg>
+								Team Player
+							</span>
+							<span class="trait-badge">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12"></polyline>
+								</svg>
+								Fast Learner
+							</span>
+							<span class="trait-badge">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12"></polyline>
+								</svg>
+								Detail Oriented
+							</span>
+							<span class="trait-badge">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="20 6 9 17 4 12"></polyline>
+								</svg>
+								API Design
+							</span>
+						</div>
+					</div>
+					<div class="about-cards">
+						<article class="card about-card">
+							<div class="about-card-icon" style="background:rgba(99,102,241,0.15);color:#818cf8;">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+									<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+								</svg>
 							</div>
-						</div>
+							<div class="about-card-body">
+								<span class="date-tag" style="background:rgba(99,102,241,0.2);color:#818cf8;">2021 -
+									Present</span>
+								<h4 style="color: white;">Bachelor's in Computer Engineering</h4>
+								<p>Purbanchal University, Nepal — Deepening knowledge in programming, databases, and
+									software engineering.</p>
+							</div>
+						</article>
+						<article class="card about-card">
+							<div class="about-card-icon" style="background:rgba(46,242,170,0.15);color:var(--green);">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="16 18 22 12 16 6" />
+									<polyline points="8 6 2 12 8 18" />
+								</svg>
+							</div>
+							<div class="about-card-body">
+								<span class="date-tag" style="background:rgba(46,242,170,0.2);color:var(--green);">Aug
+									2023 - Feb 2024</span>
+								<h4 style="color: white;">Laravel Intern → Backend Developer</h4>
+								<p>It Service Nepal — Built backend systems for e-commerce and financial apps, focusing
+									on API integration and database optimization.</p>
+							</div>
+						</article>
+						<article class="card about-card">
+							<div class="about-card-icon" style="background:rgba(255,216,77,0.15);color:var(--yellow);">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path d="M12 2L2 7l10 5 10-5-10-5z" />
+									<path d="M2 17l10 5 10-5" />
+									<path d="M2 12l10 5 10-5" />
+								</svg>
+							</div>
+							<div class="about-card-body">
+								<span class="date-tag" style="background:rgba(255,216,77,0.2);color:var(--yellow);">2018
+									- 2021</span>
+								<h4 style="color: white;">SEE / +2 Education</h4>
+								<p>Shree Satyanarayn School — Laid a solid foundation in science, mathematics, and
+									electrical engineering.</p>
+							</div>
+						</article>
 					</div>
 				</div>
 			</div>
-			<!-- Second Slide -->
-			<div class="slider-item">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/photo1.png);">
-							<div class="overlay"></div>
+		</section>
+
+		<!-- ─── Skills ─── -->
+		<section class="section" id="skills">
+			<div class="container">
+				<div class="section-center">
+					<span class="section-label section-label-alt">Skills & Technologies</span>
+				</div>
+				<div class="skills-grid fade-up">
+					<article class="card skills-category" style="padding:1.15rem;">
+						<h3>Backend & Languages</h3>
+						<div class="skills-items">
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<circle cx="12" cy="12" r="10" />
+									<path d="M2 12h20" />
+									<path
+										d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+								</svg>
+								Laravel
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path d="M12 2L2 7l10 5 10-5-10-5z" />
+									<path d="M2 17l10 5 10-5" />
+									<path d="M2 12l10 5 10-5" />
+								</svg>
+								PHP
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="16 18 22 12 16 6" />
+									<polyline points="8 6 2 12 8 18" />
+								</svg>
+								JavaScript
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path
+										d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+								</svg>
+								MySQL
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<ellipse cx="12" cy="5" rx="9" ry="3" />
+									<path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+									<path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+								</svg>
+								REST APIs
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+									<line x1="12" y1="22" x2="12" y2="15.5" />
+									<polyline points="22 8.5 12 15.5 2 8.5" />
+								</svg>
+								RBAC
+							</span>
 						</div>
-						<div class="one-forth d-flex align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Driven Learner</span>
-								<h1 class="mb-4 mt-3">Exploring <span>Laravel</span> to Build Scalable Solutions</h1>
-								<p>
-									<a href="#contact-section" class="btn btn-primary py-3 px-4">Let’s Talk</a>
-									<a href="#services-section" class="btn btn-white btn-outline-white py-3 px-4">What I
-										Do</a>
-								</p>
-							</div>
+					</article>
+					<article class="card skills-category" style="padding:1.15rem;">
+						<h3>Tools & Frontend</h3>
+						<div class="skills-items">
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path d="M12 2L2 7l10 5 10-5-10-5z" />
+									<path d="M2 17l10 5 10-5" />
+									<path d="M2 12l10 5 10-5" />
+								</svg>
+								Docker
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<circle cx="12" cy="18" r="3" />
+									<circle cx="6" cy="6" r="3" />
+									<circle cx="18" cy="6" r="3" />
+									<path d="M18 9v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9" />
+									<path d="M12 12v3" />
+								</svg>
+								Git & GitHub
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polyline points="4 17 10 11 4 5" />
+									<line x1="12" y1="19" x2="20" y2="19" />
+								</svg>
+								Terminal
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path
+										d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+								</svg>
+								HTML / CSS
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path
+										d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+								</svg>
+								Tailwind CSS
+							</span>
+							<span class="skill-chip">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round">
+									<polygon
+										points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+								</svg>
+								VS Code
+							</span>
 						</div>
-					</div>
+					</article>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row d-flex">
-				<div class="col-md-6 col-lg-5 d-flex">
-					<div class="img-about img d-flex align-items-stretch">
-						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center"
-							style="background-image: url('images/photo9.jpg'); background-size: cover; background-position: center;">
-						</div>
-					</div>
+		</section>
+
+		<!-- ─── Stats ─── -->
+		<section class="section" id="stats">
+			<div class="container">
+				<div class="section-center">
+					<span class="section-label">GitHub Statistics</span>
 				</div>
-				<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-					<div class="row justify-content-start pb-3">
-						<div class="col-md-12 heading-section ftco-animate">
-							<h1 class="big">About</h1>
-							<h2 class="mb-4">About Me</h2>
-							I'm Narayan Shrestha, a Computer Engineering student and passionate Backend Developer. I'm
-							dedicated to mastering Laravel, building secure and scalable web systems, and constantly
-							improving my craft. My goal is to create impactful software solutions through clean code,
-							continuous learning, and exploring advanced Laravel features.
-							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span>Name:</span> <span>Narayan Shrestha</span></li>
-								<li class="d-flex"><span>Date of birth:</span> <span>October 27, 2003</span></li>
-								<li class="d-flex"><span>Address:</span> <span>Biratnagar, Nepal</span></li>
-								<li class="d-flex"><span>Email:</span> <span>nischalshrestha800@gmail.com</span></li>
-								<li class="d-flex"><span>Phone:</span> <span>+977-9819375809</span></li>
-								<li class="d-flex"><span>Education:</span> <span>Bachelor's in Computer Engineering
-										(Ongoing)</span></li>
-								<li class="d-flex"><span>Specialization:</span> <span>Laravel, Backend Development,
-										APIs</span></li>
+
+				<div class="stats-grid">
+					<article class="card stats-overview fade-up">
+						<div class="stats-list">
+							<div class="stats-name" id="profileName">Narayan Shrestha</div>
+							<div class="stat-line"><span class="stat-dot"></span><span id="joinedStat">Joined GitHub
+									recently</span></div>
+							<div class="stat-line"><span class="stat-dot"></span><span id="reposStat">0 Public
+									Repos</span></div>
+							<div class="stat-line"><span class="stat-dot"></span><span id="followersStat">0
+									Followers</span></div>
+							<div class="stat-line"><span class="stat-dot"></span><span
+									id="emailStat">nischalshrestha800@gmail.com</span></div>
+						</div>
+						<div class="activity-card">
+							<img src="https://github-readme-activity-graph.vercel.app/graph?username=NischalShrestha07&theme=github-compact&bg_color=0d1730&color=93acd8&line=21e5ff&point=2ef2aa&area=true&hide_border=true&custom_title=Contribution%20Activity"
+								alt="GitHub contribution activity graph for NischalShrestha07">
+						</div>
+					</article>
+
+					<div class="meta-grid">
+						<article class="card meta-card scale-in">
+							<h3>About My GitHub Stats</h3>
+							<ul>
+								<li>Total Stars Earned: <span class="stat-number" id="totalStars">0</span></li>
+								<li>Total Forks: <span class="stat-number" id="totalForks">0</span></li>
+								<li>Original Repositories: <span class="stat-number" id="originalRepos">0</span></li>
+								<li>Total Watchers: <span class="stat-number" id="totalWatchers">0</span></li>
+								<li>Latest Push: <span class="stat-number" id="latestPush">--</span></li>
 							</ul>
-						</div>
-					</div>
-					<div class="counter-wrap ftco-animate d-flex mt-md-3">
-						<div class="text">
-							<p class="mb-4">
-								<span class="number" data-number="6">0</span>
-								<span>Projects Completed</span>
-							</p>
-							<p><a href="CV_NarayanShrestha.pdf" class="btn btn-primary py-3 px-3"
-									download="CV_NarayanShrestha.pdf">Download
-									CV</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="ftco-section ftco-no-pb" id="resume-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-10 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Resume</h1>
-					<h2 class="mb-4">Resume</h2>
-					<p>A snapshot of my academic journey and hands-on experience in backend development, reflecting my
-						commitment to mastering Laravel and building robust web solutions.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2021-Present</span>
-						<h2>Bachelor's in Computer Engineering</h2>
-						<span class="position">Purbanchal University, Nepal</span>
-						<p class="mt-4">Deepening my knowledge in programming, databases, and software engineering, with
-							a focus on backend technologies like Laravel and system design.</p>
-					</div>
+						</article>
 
-					<div class="resume-wrap ftco-animate">
-						<span class="date">10 August-19 February 2024</span>
-						<h2>Laravel Intern</h2>
-						<!-- <span class="position">It Service Nepal, Biratnagar</span> -->
-						<span class="position"><a href="https://itservicenepal.com/" target="_blank">It Service
-								Nepal</a></span>
-						<p class="mt-4">Honed my Laravel expertise by developing backend systems for e-commerce and
-							financial applications, focusing on API integration and database optimization.</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2025-Present</span>
-						<h2>Backend Developer</h2>
-						<span class="position"><a href="https://itservicenepal.com/" target="_blank">It Service
-								Nepal</a></span>
-						<p class="mt-4">Crafting APIs and exploring multi-tenant systems using Laravel, striving to
-							deliver secure, scalable solutions while continuously enhancing my skills.</p>
-					</div>
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2018-2021</span>
-						<h2>SEE / +2 Education</h2>
-						<span class="position">Shree Satyanarayn School, Nepal</span>
-						<p class="mt-4">Laid a solid foundation in science, mathematics, and electrical engineering,
-							sparking my passion for technical problem-solving.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center mt-5">
-				<div class="col-md-6 text-center ftco-animate">
-					<p><a href="CV_NarayanShrestha.pdf" class="btn btn-primary py-4 px-5"
-							download="CV_NarayanShrestha.pdf">Download CV</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<div class="row justify-content-center pb-5">
-			<div class="col-md-12 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Skills</h1>
-				<h2 class="mb-4">My Skills</h2>
-				<p>Actively sharpening my backend expertise, with a strong focus on Laravel and a drive to master
-					modern development tools.</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6 animate-box">
-				<div class="progress-wrap ftco-animate">
-					<h3>Laravel</h3>
-					<div class="progress">
-						<div class="progress-bar color-1" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-							aria-valuemax="100" style="width:40%">
-							<span>40%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 animate-box">
-				<div class="progress-wrap ftco-animate">
-					<h3>PHP</h3>
-					<div class="progress">
-						<div class="progress-bar color-2" role="progressbar" aria-valuenow="65" aria-valuemin="0"
-							aria-valuemax="100" style="width:65%">
-							<span>65%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 animate-box">
-				<div class="progress-wrap ftco-animate">
-					<h3>MySQL</h3>
-					<div class="progress">
-						<div class="progress-bar color-3" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-							aria-valuemax="100" style="width:70%">
-							<span>70%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 animate-box">
-				<div class="progress-wrap ftco-animate">
-					<h3>RESTful APIs</h3>
-					<div class="progress">
-						<div class="progress-bar color-4" role="progressbar" aria-valuenow="50" aria-valuemin="0"
-							aria-valuemax="100" style="width:50%">
-							<span>50%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 animate-box">
-				<div class="progress-wrap ftco-animate">
-					<h3>Web Development</h3>
-					<div class="progress">
-						<div class="progress-bar color-5" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-							aria-valuemax="100" style="width:60%">
-							<span>60%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 animate-box">
-				<div class="progress-wrap ftco-animate">
-					<h3>Git & GitHub</h3>
-					<div class="progress">
-						<div class="progress-bar color-6" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-							aria-valuemax="100" style="width:85%">
-							<span>85%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</section>
-		<section class="ftco-section" id="skills-section">
-			<div class="container">
-				<div class="row justify-content-center pb-5">
-					<div class="col-md-12 heading-section text-center ftco-animate" data-aos="fade-up"
-						data-aos-duration="1000">
-						<h2 class="mb-4">My Tech Stack</h2>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="100"
-							data-skill="Laravel: Building dynamic, scalable web applications with clean code.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
-								alt="Laravel Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">Laravel</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="200"
-							data-skill="PHP: Crafting robust backend logic for web applications.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-								alt="PHP Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">PHP</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="300"
-							data-skill="MySQL: Designing and optimizing relational databases.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
-								alt="MySQL Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">MySQL</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="400"
-							data-skill="Web Dev: Creating responsive, user-friendly web interfaces.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-								alt="Web Development Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">HTML</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="500"
-							data-skill="Git: Managing version control and collaborative workflows.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-								alt="Git Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">Git</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="600"
-							data-skill="CSS: Styling web interfaces with modern, responsive designs.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-								alt="CSS Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">CSS</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="700"
-							data-skill="JavaScript: Adding interactivity and dynamic features to web applications.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-								alt="JavaScript Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">JavaScript</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="1000"
-							data-skill="Livewire: Full-stack framework for Laravel to build modern, dynamic interfaces without leaving PHP.">
-							<img src="https://laravel-livewire.com/img/twitter.png" alt="Livewire Logo"
-								class="skill-icon mb-2" style="border-radius: 8px;">
-							<h3 class="skill-title">Livewire</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="1100"
-							data-skill="Bootstrap: Powerful front-end framework for responsive web design.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-								alt="Bootstrap Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">Bootstrap</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-
-					<div class="col-6 col-md-4 col-lg-2 mb-4">
-						<div class="skill-card ftco-animate text-center" data-aos="fade-up" data-aos-delay="1200"
-							data-skill="GitHub: Hosting, version control, and collaboration for projects.">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-								alt="GitHub Logo" class="skill-icon mb-2">
-							<h3 class="skill-title">GitHub</h3>
-							<div class="skill-tooltip"></div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<style>
-				.skill-card {
-					background: linear-gradient(135deg, #ffffff, #f8f9fa);
-					padding: 20px;
-					border-radius: 12px;
-					box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-					transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-					position: relative;
-					cursor: pointer;
-				}
-
-				.skill-card:hover {
-					transform: translateY(-8px);
-					box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-					border: 2px solid #007bff;
-				}
-
-				.skill-card.active {
-					border: 2px solid #28a745;
-				}
-
-				.skill-icon {
-					width: 64px;
-					height: 64px;
-					object-fit: contain;
-					transition: transform 0.3s ease;
-				}
-
-				.skill-card:hover .skill-icon {
-					transform: scale(1.1);
-				}
-
-				.skill-title {
-					font-size: 1.2rem;
-					font-weight: 500;
-					color: #333;
-					margin: 0;
-					transition: color 0.3s ease;
-				}
-
-				.skill-card:hover .skill-title {
-					color: #007bff;
-				}
-
-				.skill-tooltip {
-					position: absolute;
-					bottom: 100%;
-					left: 50%;
-					transform: translateX(-50%);
-					background: #333;
-					color: #fff;
-					padding: 8px 12px;
-					border-radius: 6px;
-					font-size: 0.9rem;
-					width: 200px;
-					text-align: center;
-					opacity: 0;
-					visibility: hidden;
-					transition: opacity 0.3s ease, visibility 0.3s ease;
-					z-index: 10;
-				}
-
-				.skill-card:hover .skill-tooltip {
-					opacity: 1;
-					visibility: visible;
-				}
-
-				.skill-tooltip::after {
-					content: '';
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					transform: translateX(-50%);
-					border-width: 5px;
-					border-style: solid;
-					border-color: #333 transparent transparent transparent;
-				}
-
-				@media (max-width: 767px) {
-					.skill-card {
-						padding: 15px;
-					}
-
-					.skill-icon {
-						width: 48px;
-						height: 48px;
-					}
-
-					.skill-title {
-						font-size: 1rem;
-					}
-
-					.skill-tooltip {
-						width: 150px;
-						font-size: 0.8rem;
-					}
-				}
-			</style>
-			<script>
-				$(document).ready(function () {
-					$('.skill-card').on('click', function () {
-						$('.skill-card').removeClass('active');
-						$(this).addClass('active');
-						var skillDesc = $(this).data('skill');
-						$(this).find('.skill-tooltip').text(skillDesc);
-					});
-				});
-			</script>
-		</section>
-
-		<section class="ftco-section" id="projects-section">
-			<div class="container">
-				<div class="row justify-content-center py-5 mt-5">
-					<div class="col-md-12 heading-section text-center ftco-animate">
-						<h1 class="big big-2">What I have built</h1>
-						<h2 class="mb-4">Projects</h2>
-						<p>Demonstrating my growing expertise in Laravel through practical applications, each a step
-							toward
-							becoming a better developer.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">GYM Management System</h3>
-								<img src="images/adminGMS.png" alt="GYM Admin Panel" class="img-fluid">
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-4">Payment Management System</h3>
-								<img src="images/pms.png" alt="PMS Admin Panel" class="img-fluid">
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-3">Human Resource Management System [HRMS]</h3>
-								<img src="images/image_1.jpg" alt="HRMS" class="img-fluid">
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Inventory Lokta Manager</h3>
-								<img src="images/bg_1.jpg" alt="Inventory Lokta Manager" class="img-fluid">
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Ticketing System Lokta</h3>
-								<img src="images/bg_1.jpg" alt="Ticketing System Lokta" class="img-fluid">
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Rathicol APIs</h3>
-								<img src="images/bg_1.jpg" alt="Rathicol APIs" class="img-fluid">
-							</div>
-						</a>
+						<article class="card meta-card scale-in">
+							<h3>About My Profile</h3>
+							<ul>
+								<li>Profile Name: <span class="stat-number" id="profileLogin">NischalShrestha07</span>
+								</li>
+								<li>Location: <span class="stat-number" id="profileLocation">Biratnagar, Nepal</span>
+								</li>
+								<li>Followers / Following: <span class="stat-number" id="followPair">0 / 0</span></li>
+								<li>Company: <span class="stat-number" id="profileCompany">--</span></li>
+								<li>Primary Focus: <span class="stat-number">Laravel Backend</span></li>
+							</ul>
+						</article>
 					</div>
 				</div>
 			</div>
 		</section>
 
-
-
-
-		<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<!-- ─── Projects ─── -->
+		<section class="section" id="projects">
 			<div class="container">
-				<div class="row justify-content-center mb-5 pb-3">
-					<div class="col-md-7 heading-section text-center ftco-animate">
-						<h1 class="big big-2">Contact</h1>
-						<h2 class="mb-4">Get in Touch</h2>
-						<p>Let’s connect to discuss freelance opportunities, tech collaborations, or mentorship. I’m
-							eager
-							to contribute my growing Laravel expertise to your next project.</p>
-					</div>
+				<div class="section-center">
+					<span class="section-label section-label-alt">Projects</span>
 				</div>
-				<div class="row d-flex contact-info mb-5">
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box p-4 text-center">
+				<div class="repo-grid">
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>Gym Management System</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Complete gym management platform with member tracking, subscription plans, attendance logs,
+							payment history, and staff management with RBAC roles.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag rbac">RBAC</span>
+							<span class="project-tag bootstrap">Bootstrap</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>Social Networking System</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Social network with user profiles, friend connections, news feed, real-time messaging, post
+							interactions, and notification system.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag api">REST APIs</span>
+							<span class="project-tag jquery">jQuery</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>Payment Management System</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Multi-gateway payment management with transaction tracking, invoice generation, refund
+							handling, subscription billing, and financial reporting.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag payment">Payment</span>
+							<span class="project-tag api">APIs</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>CRM</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Customer Relationship Management system with lead tracking, pipeline management, contact
+							management, task automation, and sales analytics dashboard.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag livewire">Livewire</span>
+							<span class="project-tag rbac">RBAC</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>HRMS</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Human Resource Management System with employee profiles, leave management, attendance
+							tracking, payroll processing, and performance reviews.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag rbac">RBAC</span>
+							<span class="project-tag tenancy">Tenancy</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>Ticketing System</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Support ticketing platform with ticket creation, priority queue, assignment workflows, SLA
+							tracking, canned responses, and customer portal.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag rbac">RBAC</span>
+							<span class="project-tag jquery">jQuery</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>Rathicol APIs</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>RESTful API microservices built for scalable backend systems, featuring multi-tenant
+							architecture, token-based auth, and comprehensive API documentation.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag api">REST APIs</span>
+							<span class="project-tag tenancy">Tenancy</span>
+							<span class="project-tag docker">Docker</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>E-commerce Platform</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Full-featured e-commerce system with product catalog, shopping cart, order management,
+							payment gateway integration, and admin dashboard.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag payment">Payment</span>
+							<span class="project-tag vue">Vue.js</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>Q-Ecommerce</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Quick-commerce platform optimized for fast ordering, real-time inventory sync, delivery
+							routing, and multi-vendor marketplace management.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag api">APIs</span>
+							<span class="project-tag redis">Redis</span>
+						</div>
+					</article>
+
+					<article class="card repo-card">
+						<div class="repo-card-top">
+							<h3>RBAC & Multi-Tenancy Systems</h3>
+							<a class="repo-link-icon" href="https://github.com/NischalShrestha07" target="_blank"
+								rel="noreferrer" aria-label="View on GitHub">→</a>
+						</div>
+						<p>Modular RBAC engine and multi-tenant architecture with role/permission management, tenant
+							isolation, shared DB strategies, and middleware integration.</p>
+						<div class="project-tags">
+							<span class="project-tag laravel">Laravel</span>
+							<span class="project-tag php">PHP</span>
+							<span class="project-tag mysql">MySQL</span>
+							<span class="project-tag rbac">RBAC</span>
+							<span class="project-tag tenancy">Tenancy</span>
+							<span class="project-tag api">APIs</span>
+						</div>
+					</article>
+				</div>
+				<div class="center-stack">
+					<a class="view-all-button" href="https://github.com/NischalShrestha07?tab=repositories"
+						target="_blank" rel="noreferrer">VIEW ALL PROJECTS →</a>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- ─── Contributions ─── -->
+		<section class="section" id="contributions">
+			<div class="container">
+				<div class="section-center">
+					<span class="section-label section-label-alt">Streak & Rank</span>
+				</div>
+
+				<div class="streak-grid fade-up">
+					<article class="card streak-strip">
+						<h3 style="margin:0 0 1rem;color:var(--cyan);font-size:1rem;">GitHub Quick Numbers</h3>
+						<div class="mini-stats">
+							<div class="mini-stat">
+								<strong id="miniRepos">0</strong>
+								<span>Public repos</span>
+							</div>
+							<div class="mini-stat">
+								<strong id="miniStars">0</strong>
+								<span>Total stars</span>
+							</div>
+							<div class="mini-stat">
+								<strong id="miniFollowers">0</strong>
+								<span>Followers</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="card image-card">
+						<img src="https://streak-stats.demolab.com?user=NischalShrestha07&theme=transparent&background=0D1730&border=00000000&stroke=21E5FF&ring=21E5FF&fire=FFD84D&currStreakLabel=DCE7FF&sideLabels=DCE7FF&currStreakNum=F4F8FF&sideNums=F4F8FF&dates=93ACD8"
+							alt="GitHub streak stats for NischalShrestha07">
+					</article>
+				</div>
+
+				<div class="contribution-section section-center">
+					<span class="section-label">Contribution Graph</span>
+				</div>
+				<article class="card contribution-card fade-in" id="contributionCard">
+					<div class="contribution-header">
+						<h3>365-Day GitHub Contributions</h3>
+						<span class="contribution-total" id="contributionTotal">Loading...</span>
+					</div>
+					<div id="contributionGraph"></div>
+				</article>
+
+
+			</div>
+		</section>
+
+		<!-- ─── Contact ─── -->
+		<section class="section" id="contact">
+			<div class="container">
+				<div class="section-center">
+					<span class="section-label">Get In Touch</span>
+				</div>
+				<div class="contact-grid fade-up">
+					<article class="card contact-info">
+						<h3>Let's build something together</h3>
+						<p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.7;">
+							Have a project in mind, a question, or just want to connect? Feel free to reach out!
+						</p>
+						<div class="contact-item">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round">
+								<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+								<polyline points="22,6 12,13 2,6" />
+							</svg>
+							<a href="mailto:nischalshrestha800@gmail.com">nischalshrestha800@gmail.com</a>
+						</div>
+						<div class="contact-item">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round">
+								<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+								<circle cx="12" cy="10" r="3" />
+							</svg>
+							<span>Biratnagar, Nepal</span>
+						</div>
+						<div class="contact-item">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round">
+								<path
+									d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+							</svg>
 							<a href="https://github.com/NischalShrestha07" target="_blank"
-								class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-github"></span>
-							</a>
-							<h3 class="mb-2">GitHub</h3>
+								rel="noreferrer">@NischalShrestha07</a>
 						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box p-4 text-center">
-							<a href="https://facebook.com/NischalShrestha07" target="_blank"
-								class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-facebook"></span>
+						<div class="contact-social">
+							<a href="https://github.com/NischalShrestha07" target="_blank" rel="noreferrer"
+								aria-label="GitHub">
+								<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+									<path
+										d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.41-4.04-1.41-.54-1.37-1.33-1.73-1.33-1.73-1.09-.74.08-.72.08-.72 1.2.08 1.84 1.25 1.84 1.25 1.08 1.84 2.82 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.31-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.57.12-3.27 0 0 1.01-.32 3.3 1.23a11.44 11.44 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.67 1.7.25 2.96.12 3.27.77.84 1.24 1.91 1.24 3.22 0 4.62-2.8 5.63-5.48 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.82.58A12 12 0 0 0 12 .5Z" />
+								</svg>
 							</a>
-							<h3 class="mb-2">Facebook</h3>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box p-4 text-center">
-							<a href="https://mail.google.com/mail/?view=cm&fs=1&to=nischalshrestha800@gmail.com"
-								target="_blank" class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-paper-plane"></span>
+							<a href="https://www.linkedin.com/in/narayanshrestha07/" target="_blank" rel="noreferrer"
+								aria-label="LinkedIn">
+								<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+									<path
+										d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.83v2.05h.06c.53-1 1.83-2.05 3.77-2.05 4.04 0 4.78 2.66 4.78 6.12V23h-4v-7.68c0-1.83-.03-4.18-2.55-4.18-2.55 0-2.94 1.99-2.94 4.05V23h-4V8Z" />
+								</svg>
 							</a>
-							<h3 class="mb-2">Email Address</h3>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box p-4 text-center">
-							<a href="https://www.linkedin.com/in/narayanshrestha07/" target="_blank"
-								class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-linkedin"></span>
+							<a href="https://facebook.com/NischalShrestha07" target="_blank" rel="noreferrer"
+								aria-label="Facebook">
+								<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+									<path
+										d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H17V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.5v3h2.8v8h3.2Z" />
+								</svg>
 							</a>
-							<h3 class="mb-2">LinkedIn</h3>
 						</div>
-					</div>
+					</article>
+					<form class="card contact-form" id="contactForm">
+						<h3>Send a Message</h3>
+						<div class="form-group">
+							<label for="formName">Name</label>
+							<input type="text" id="formName" placeholder="Your name" required>
+						</div>
+						<div class="form-group">
+							<label for="formEmail">Email</label>
+							<input type="email" id="formEmail" placeholder="your@email.com" required>
+						</div>
+						<div class="form-group">
+							<label for="formSubject">Subject</label>
+							<input type="text" id="formSubject" placeholder="What's this about?">
+						</div>
+						<div class="form-group">
+							<label for="formMessage">Message</label>
+							<textarea id="formMessage" placeholder="Your message..." required></textarea>
+						</div>
+						<button class="submit-button" type="submit">Send Message →</button>
+					</form>
 				</div>
 			</div>
 		</section>
-		<footer class="ftco-footer ftco-section">
-			<div class="col-md-12 text-center">
-				<p class="">©
-					<script>document.write(new Date().getFullYear());</script> All rights reserved
-				</p>
-				<p class="mb-1"><i>Thank you for visiting!</i></p>
-				<p class="mb-1"><span id="visitCount">Loading visit count...</span></p>
-				<p>Crafted with <span style="color: red;">❤</span> by Narayan Shrestha</p>
+
+		<!-- ─── Footer ─── -->
+		<footer class="site-footer">
+			<div class="container">
+				<div class="footer-inner">
+					<span class="footer-copy">© 2026 Narayan Shrestha — Crafted with 💕</span>
+				</div>
 			</div>
 		</footer>
-		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-				<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-				<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-					stroke="#F96D00" />
-			</svg></div>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery-migrate-3.0.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.easing.1.3.js"></script>
-		<script src="js/jquery.waypoints.min.js"></script>
-		<script src="js/jquery.stellar.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/aos.js"></script>
-		<script src="js/jquery.animateNumber.min.js"></script>
-		<script src="js/scrollax.min.js"></script>
-		<script src="js/main.js"></script>
-</body>
+	</main>
 
-<script>
-	// Visitor counter using localStorage
-	document.addEventListener('DOMContentLoaded', function () {
-		if (typeof (Storage) !== "undefined") {
-			let visitCount = localStorage.getItem('visitCount') || 0;
-			visitCount = Number(visitCount) + 1;
-			localStorage.setItem('visitCount', visitCount);
-			document.getElementById('visitCount').textContent = `Total Visits: ${visitCount}`;
+	<button class="back-to-top" id="backToTop" aria-label="Back to top">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+			stroke-linejoin="round">
+			<polyline points="18 15 12 9 6 15" />
+		</svg>
+	</button>
+
+	<script>
+		const username = "NischalShrestha07";
+		const profileUrl = "https://api.github.com/users/" + username;
+		const reposUrl = "https://api.github.com/users/" + username + "/repos?per_page=100&sort=updated";
+
+		// ─── Mobile Menu ───
+		const menuToggle = document.getElementById("menuToggle");
+		const mobileNav = document.getElementById("mobileNav");
+
+		menuToggle.addEventListener("click", () => {
+			const open = mobileNav.dataset.open === "true";
+			mobileNav.dataset.open = String(!open);
+			menuToggle.textContent = open ? "Menu" : "Close";
+			menuToggle.setAttribute("aria-expanded", String(!open));
+		});
+
+		mobileNav.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", () => {
+				mobileNav.dataset.open = "false";
+				menuToggle.textContent = "Menu";
+				menuToggle.setAttribute("aria-expanded", "false");
+			});
+		});
+
+		// ─── Header Scroll Effect ───
+		const siteHeader = document.getElementById("siteHeader");
+		let lastScroll = 0;
+
+		window.addEventListener("scroll", () => {
+			const y = window.scrollY;
+			if (y > 30) {
+				siteHeader.classList.add("scrolled");
+			} else {
+				siteHeader.classList.remove("scrolled");
+			}
+			lastScroll = y;
+		});
+
+		// ─── Back to Top ───
+		const backToTop = document.getElementById("backToTop");
+
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 500) {
+				backToTop.classList.add("visible");
+			} else {
+				backToTop.classList.remove("visible");
+			}
+		});
+
+		backToTop.addEventListener("click", () => {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+
+		// ─── Scroll Animations ───
+		const animateElements = document.querySelectorAll(".fade-up, .fade-in, .scale-in");
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("visible");
+				}
+			});
+		}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+		animateElements.forEach((el) => observer.observe(el));
+
+		// ─── GitHub Data ───
+		function formatDate(dateString) {
+			const date = new Date(dateString);
+			return date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 		}
-	});
-</script>
+
+		function relativeYearsSince(dateString) {
+			const created = new Date(dateString);
+			const now = new Date();
+			const years = Math.max(0, now.getFullYear() - created.getFullYear() - ((now.getMonth() < created.getMonth() || (now.getMonth() === created.getMonth() && now.getDate() < created.getDate())) ? 1 : 0));
+			return years;
+		}
+
+		function getLanguageColor(language) {
+			const colors = {
+				JavaScript: "#f1e05a",
+				TypeScript: "#3178c6",
+				PHP: "#4f5d95",
+				HTML: "#e34c26",
+				CSS: "#563d7c",
+				SCSS: "#c6538c",
+				Vue: "#41b883",
+				Python: "#3572A5",
+				Blade: "#f7523f",
+				Dockerfile: "#384d54"
+			};
+			return colors[language] || "#21e5ff";
+		}
+
+		function renderLanguageBars(languageTotals) {
+			const entries = Object.entries(languageTotals)
+				.sort((a, b) => b[1] - a[1])
+				.slice(0, 8);
+
+			const total = entries.reduce((sum, [, value]) => sum + value, 0);
+			const left = entries.slice(0, Math.ceil(entries.length / 2));
+			const right = entries.slice(Math.ceil(entries.length / 2));
+			const languageBars = document.getElementById("languageBars");
+
+			const createList = (list) => `
+        <div class="bar-list">
+          ${list.map(([language, value]) => {
+				const percent = total ? (value / total) * 100 : 0;
+				return `
+              <div class="bar-item">
+                <div class="bar-row">
+                  <span>${language}</span>
+                  <span>${percent.toFixed(1)}%</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width:${percent}%; background: linear-gradient(90deg, ${getLanguageColor(language)}, #21e5ff);"></div>
+                </div>
+              </div>
+            `;
+			}).join("")}
+        </div>
+      `;
+
+			languageBars.innerHTML = createList(left) + createList(right);
+		}
+
+		async function fetchLanguages(repos) {
+			const ownRepos = repos.filter((repo) => !repo.fork).slice(0, 12);
+			const languageTotals = {};
+
+			await Promise.all(ownRepos.map(async (repo) => {
+				try {
+					const response = await fetch(repo.languages_url);
+					if (!response.ok) return;
+					const languages = await response.json();
+					Object.entries(languages).forEach(([language, bytes]) => {
+						languageTotals[language] = (languageTotals[language] || 0) + bytes;
+					});
+				} catch (error) {
+					console.warn("Language fetch failed for", repo.name);
+				}
+			}));
+
+			if (Object.keys(languageTotals).length > 0) {
+				renderLanguageBars(languageTotals);
+			} else {
+				document.getElementById("languageBars").innerHTML = '<div class="loading">No language data available.</div>';
+			}
+		}
+
+		async function loadGitHubData() {
+			try {
+				const [profileResponse, reposResponse] = await Promise.all([fetch(profileUrl), fetch(reposUrl)]);
+
+				if (!profileResponse.ok || !reposResponse.ok) {
+					throw new Error("GitHub API returned " + profileResponse.status + "/" + reposResponse.status);
+				}
+
+				const profile = await profileResponse.json();
+				const repos = await reposResponse.json();
+
+				if (!Array.isArray(repos)) {
+					throw new Error("Repos data is not an array");
+				}
+
+				document.getElementById("profileAvatar").src = profile.avatar_url || "images/photo1.png";
+				document.getElementById("profileName").textContent = profile.name || username;
+				document.getElementById("profileLogin").textContent = profile.login || username;
+				document.getElementById("profileLocation").textContent = profile.location || "Biratnagar, Nepal";
+				document.getElementById("profileCompany").textContent = profile.company || "Independent / Open to Work";
+				document.getElementById("followPair").textContent = `${profile.followers ?? 0} / ${profile.following ?? 0}`;
+				document.getElementById("joinedStat").textContent = `Joined GitHub ${relativeYearsSince(profile.created_at)} years ago`;
+				document.getElementById("reposStat").textContent = `${profile.public_repos ?? 0} Public Repos`;
+				document.getElementById("followersStat").textContent = `${profile.followers ?? 0} Followers`;
+				document.getElementById("emailStat").textContent = profile.email || "nischalshrestha800@gmail.com";
+				document.getElementById("codeCompany").textContent = `"${(profile.company || "Backend Developer").replace(/"/g, "")}"`;
+				document.getElementById("codeLocation").textContent = `"${(profile.location || "Biratnagar, Nepal").replace(/"/g, "")}"`;
+				document.getElementById("codeFollowers").textContent = profile.followers ?? 0;
+				document.getElementById("codeFollowing").textContent = profile.following ?? 0;
+				document.getElementById("codeRepos").textContent = profile.public_repos ?? 0;
+
+				if (profile.bio) {
+					document.getElementById("profileBio").innerHTML = '<span class="accent">+</span> ' + profile.bio;
+				}
+
+				const ownRepos = repos.filter((repo) => !repo.fork);
+				const totalStars = ownRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+				const totalForks = ownRepos.reduce((sum, repo) => sum + repo.forks_count, 0);
+				const totalWatchers = ownRepos.reduce((sum, repo) => sum + repo.watchers_count, 0);
+				const latestUpdated = ownRepos.slice().sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))[0];
+
+				document.getElementById("totalStars").textContent = totalStars;
+				document.getElementById("totalForks").textContent = totalForks;
+				document.getElementById("originalRepos").textContent = ownRepos.length;
+				document.getElementById("totalWatchers").textContent = totalWatchers;
+				document.getElementById("latestPush").textContent = latestUpdated ? formatDate(latestUpdated.pushed_at) : "--";
+
+				document.getElementById("miniRepos").textContent = profile.public_repos ?? 0;
+				document.getElementById("miniStars").textContent = totalStars;
+				document.getElementById("miniFollowers").textContent = profile.followers ?? 0;
+
+				if (ownRepos.length > 0) {
+					fetchLanguages(repos);
+				} else {
+					document.getElementById("languageBars").innerHTML = '<div class="loading">No language data available.</div>';
+				}
+			} catch (error) {
+				console.error("GitHub data load failed:", error);
+				document.getElementById("languageBars").innerHTML = '<div class="loading">Unable to load language data right now. ' + error.message + '</div>';
+			}
+		}
+
+		// ─── Contribution Graph (real data from GitHub) ───
+		function renderContributionGraph(contributions) {
+			const container = document.getElementById("contributionGraph");
+			const totalEl = document.getElementById("contributionTotal");
+
+			if (!contributions || contributions.length === 0) {
+				showFallbackGraph();
+				return;
+			}
+
+			const now = new Date();
+			const oneYearAgo = new Date(now);
+			oneYearAgo.setDate(oneYearAgo.getDate() - 364);
+
+			const contribMap = {};
+			contributions.forEach(c => {
+				contribMap[c.date] = c;
+			});
+
+			const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
+
+			let totalCount = 0;
+			const weeks = [];
+			let currentWeek = [];
+
+			const startDate = new Date(oneYearAgo);
+			const padStart = startDate.getDay();
+
+			for (let i = 0; i < padStart; i++) {
+				currentWeek.push(null);
+			}
+
+			const current = new Date(startDate);
+			while (current <= now) {
+				const dateStr = current.toISOString().split("T")[0];
+				const entry = contribMap[dateStr];
+				const count = entry ? entry.count : 0;
+				const level = entry ? entry.level : 0;
+
+				currentWeek.push({
+					date: new Date(current),
+					count: count,
+					level: level
+				});
+				totalCount += count;
+
+				if (currentWeek.length === 7) {
+					weeks.push(currentWeek);
+					currentWeek = [];
+				}
+				current.setDate(current.getDate() + 1);
+			}
+			if (currentWeek.length > 0) {
+				while (currentWeek.length < 7) {
+					currentWeek.push(null);
+				}
+				weeks.push(currentWeek);
+			}
+
+			const monthsHtml = `<div class="contribution-months">${weeks.length > 0 ? (() => {
+				const mLabels = [];
+				let lastMonth = -1;
+				weeks.forEach((week, wi) => {
+					const first = week.find(d => d !== null);
+					if (first) {
+						const m = first.date.getMonth();
+						if (m !== lastMonth) {
+							mLabels.push(`<span style="min-width:${Math.max(16, (weeks.length / 12))}px">${first.date.toLocaleDateString("en", { month: "short" })}</span>`);
+							lastMonth = m;
+						}
+					}
+				});
+				return mLabels.join("");
+			})() : ""}</div>`;
+
+			const weeksHtml = weeks.map((week) =>
+				`<div class="contribution-week">${week.map((day) => {
+					if (!day) return '<div class="contribution-day-wrap"><div class="contribution-day" style="visibility:hidden;"></div></div>';
+					const fmtDate = day.date.toLocaleDateString("en", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+					return `<div class="contribution-day-wrap">
+				<div class="contribution-day level-${day.level}"></div>
+				<div class="contribution-tooltip"><span class="tt-date">${fmtDate}</span><br><span class="tt-count">${day.count} contribution${day.count !== 1 ? "s" : ""}</span></div>
+			</div>`;
+				}).join("")}</div>`
+			).join("");
+
+			const labelsHtml = `<div class="contribution-day-labels">${dayLabels.map((l) => `<span>${l}</span>`).join("")}</div>`;
+
+			container.innerHTML = `
+        ${monthsHtml}
+        <div class="contribution-grid-wrapper">
+          ${labelsHtml}
+          <div class="contribution-weeks">${weeksHtml}</div>
+        </div>
+        <div class="contribution-legend">
+          <span>Less</span>
+          <span class="sample" style="background:var(--contribution-0);"></span>
+          <span class="sample" style="background:var(--contribution-1);"></span>
+          <span class="sample" style="background:var(--contribution-2);"></span>
+          <span class="sample" style="background:var(--contribution-3);"></span>
+          <span class="sample" style="background:var(--contribution-4);"></span>
+          <span>More</span>
+        </div>
+      `;
+
+			totalEl.innerHTML = `<strong>${totalCount.toLocaleString()}</strong> contributions in the last year`;
+		}
+
+		function showFallbackGraph() {
+			const container = document.getElementById("contributionGraph");
+			const totalEl = document.getElementById("contributionTotal");
+			container.innerHTML = `<img src="https://ghchart.rshah.org/2ef2aa/NischalShrestha07" alt="GitHub contribution heatmap" style="width:100%;border-radius:0.35rem;">`;
+			totalEl.innerHTML = `<em>Contribution data from GitHub</em>`;
+		}
+
+		async function loadContributions() {
+			try {
+				const res = await fetch("https://github-contributions-api.deno.dev/api/v1/NischalShrestha07");
+				if (!res.ok) throw new Error("Contributions API returned " + res.status);
+				const data = await res.json();
+				if (data && data.contributions) {
+					renderContributionGraph(data.contributions);
+				} else {
+					showFallbackGraph();
+				}
+			} catch (e) {
+				console.warn("Contributions API failed, using image fallback:", e);
+				showFallbackGraph();
+			}
+		}
+
+		// ─── Contact Form ───
+		document.getElementById("contactForm").addEventListener("submit", (e) => {
+			e.preventDefault();
+			const btn = e.target.querySelector(".submit-button");
+			const orig = btn.textContent;
+			btn.textContent = "Message sent! ✓";
+			btn.style.background = "linear-gradient(135deg, var(--green), #1a8a5c)";
+			setTimeout(() => {
+				btn.textContent = orig;
+				btn.style.background = "";
+				e.target.reset();
+			}, 2500);
+		});
+
+		// ─── Initialize ───
+		loadGitHubData();
+		loadContributions();
+	</script>
+</body>
 
 </html>
