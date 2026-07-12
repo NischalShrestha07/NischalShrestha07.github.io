@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projects — Narayan Shrestha</title>
+	<meta name="description" content="Laravel projects by Narayan Shrestha: gym management, payments, CRM, HRMS, ticketing, e-commerce, RBAC and multi-tenancy systems.">
+	<meta property="og:title" content="Narayan Shrestha — Laravel Backend Developer">
+	<meta property="og:description"
+		content="Backend developer building APIs, admin systems and product-focused web apps with Laravel.">
+	<meta property="og:type" content="website">
+	<meta property="og:image"
+		content="https://raw.githubusercontent.com/NischalShrestha07/NischalShrestha07.github.io/main/images/photo1.png">
+	<meta name="theme-color" content="#070b16">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://api.github.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+	<div id="progress"></div>
+	<div id="spotlight"></div>
+
+	<header class="site-header">
+		<div class="container">
+			<div class="header-inner">
+				<a class="brand" href="index.html">
+					<span class="brand-mark">NS</span>
+					<span>narayan<span style="color:var(--cyan)">.</span>dev</span>
+				</a>
+				<nav class="nav">
+					<a href="index.html">Home</a>
+					<a href="about.html">About</a>
+					<a href="projects.html">Projects</a>
+					<a href="github.html">GitHub</a>
+					<a href="contact.html">Contact</a>
+				</nav>
+				<a class="header-cta" href="CV_NarayanShrestha.pdf" download>Résumé ↓</a>
+				<button class="burger" id="burger" type="button" aria-label="Toggle menu" aria-expanded="false"
+					aria-controls="mobileNav">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round">
+						<line x1="3" y1="7" x2="21" y2="7" />
+						<line x1="3" y1="12" x2="21" y2="12" />
+						<line x1="3" y1="17" x2="21" y2="17" />
+					</svg>
+				</button>
+			</div>
+			<nav class="mobile-nav" id="mobileNav" data-open="false">
+				<a href="index.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="projects.html">Projects</a>
+				<a href="github.html">GitHub</a>
+				<a href="contact.html">Contact</a>
+				<a href="CV_NarayanShrestha.pdf" download>Résumé ↓</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+
+		<section class="section">
+			<div class="container">
+				<div class="reveal">
+					<span class="eyebrow">Projects</span>
+					<h2 class="section-title">Things I've built</h2>
+					<p class="section-lead">
+						Ten systems, mostly Laravel, mostly multi-tenant, all of them with a permission layer someone
+						had to think hard about. Filter by what you care about.
+					</p>
+				</div>
+
+				<div class="filters reveal" id="filters">
+					<button class="filter active" data-filter="all">All</button>
+					<button class="filter" data-filter="laravel">Laravel</button>
+					<button class="filter" data-filter="api">APIs</button>
+					<button class="filter" data-filter="rbac">RBAC</button>
+					<button class="filter" data-filter="tenancy">Multi-Tenancy</button>
+					<button class="filter" data-filter="product">Products</button>
+				</div>
+
+				<div class="grid-3" id="projectList" data-stagger>
+					<article class="card project card-glow" data-tilt data-tags="laravel rbac product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Fitness</span>
+								<h3>Gym Management System</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Member tracking, subscription plans, attendance logs, payment history and staff management with full role-based access control.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">RBAC</span><span class="tag">Bootstrap</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="laravel api product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Social</span>
+								<h3>Social Networking System</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>User profiles, friend connections, a news feed, real-time messaging, post interactions and a notification system.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">REST APIs</span><span class="tag">jQuery</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="laravel api product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Fintech</span>
+								<h3>Payment Management System</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Multi-gateway payment handling with transaction tracking, invoice generation, refunds, subscription billing and financial reporting.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">Payments</span><span class="tag">MySQL</span><span class="tag">APIs</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="laravel rbac product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Sales</span>
+								<h3>CRM</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Lead tracking, pipeline management, contact management, task automation and a sales analytics dashboard.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">Livewire</span><span class="tag">MySQL</span><span class="tag">RBAC</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="laravel rbac tenancy product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">HR</span>
+								<h3>HRMS</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Employee profiles, leave management, attendance tracking, payroll processing and performance reviews.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">Tenancy</span><span class="tag">MySQL</span><span class="tag">RBAC</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="laravel rbac product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Support</span>
+								<h3>Ticketing System</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Ticket creation, priority queues, assignment workflows, SLA tracking, canned responses and a customer portal.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">RBAC</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="api tenancy laravel">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Platform</span>
+								<h3>API &amp; Microservices</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>RESTful services for scalable backends: multi-tenant architecture, token-based auth and full API documentation.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">REST APIs</span><span class="tag">Docker</span><span class="tag">Tenancy</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="laravel api product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Commerce</span>
+								<h3>E-commerce Platform</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Product catalogue, cart, order management, payment gateway integration and an admin dashboard.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Payments</span><span class="tag">MySQL</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="laravel api product">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Commerce</span>
+								<h3>Q-Ecommerce</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Quick-commerce platform: fast ordering, real-time inventory sync, delivery routing and multi-vendor marketplace management.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">Redis</span><span class="tag">APIs</span><span class="tag">MySQL</span></div>
+					</article>
+					<article class="card project card-glow" data-tilt data-tags="rbac tenancy laravel">
+						<div class="project-top">
+							<div>
+								<span class="project-domain">Platform</span>
+								<h3>RBAC &amp; Multi-Tenancy Engine</h3>
+							</div>
+							<span class="arrow">→</span>
+						</div>
+						<p>Modular RBAC engine with role/permission management, tenant isolation, shared-DB strategies and middleware integration.</p>
+						<div class="tags"><span class="tag">Laravel</span><span class="tag">RBAC</span><span class="tag">Tenancy</span><span class="tag">MySQL</span></div>
+					</article>
+				</div>
+
+				<div style="text-align:center;margin-top:3rem;" class="reveal">
+					<a class="btn btn-ghost" href="https://github.com/NischalShrestha07?tab=repositories"
+						target="_blank" rel="noreferrer">Browse the source on GitHub →</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-inner">
+				<p>© 2026 Narayan Shrestha — built from scratch, no template.</p>
+				<div class="socials">
+					<a class="social" href="https://github.com/NischalShrestha07" target="_blank" rel="noreferrer"
+						aria-label="GitHub">
+						<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+							<path
+								d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.41-4.04-1.41-.54-1.37-1.33-1.73-1.33-1.73-1.09-.74.08-.72.08-.72 1.2.08 1.84 1.25 1.84 1.25 1.08 1.84 2.82 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.31-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.57.12-3.27 0 0 1.01-.32 3.3 1.23a11.44 11.44 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.67 1.7.25 2.96.12 3.27.77.84 1.24 1.91 1.24 3.22 0 4.62-2.8 5.63-5.48 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.82.58A12 12 0 0 0 12 .5Z" />
+						</svg>
+					</a>
+					<a class="social" href="https://www.linkedin.com/in/narayanshrestha07/" target="_blank"
+						rel="noreferrer" aria-label="LinkedIn">
+						<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+							<path
+								d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.83v2.05h.06c.53-1 1.83-2.05 3.77-2.05 4.04 0 4.78 2.66 4.78 6.12V23h-4v-7.68c0-1.83-.03-4.18-2.55-4.18-2.55 0-2.94 1.99-2.94 4.05V23h-4V8Z" />
+						</svg>
+					</a>
+					<a class="social" href="mailto:nischalshrestha800@gmail.com" aria-label="Email">
+						<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+							<path
+								d="M2 5h20a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm10 7 8.5-5H3.5L12 12Zm0 2L3 8.5V17h18V8.5L12 14Z" />
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<button id="toTop" type="button" aria-label="Back to top">↑</button>
+	<script src="assets/js/app.js"></script>
+</body>
+
+</html>
