@@ -158,6 +158,7 @@ h3 {
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
+	-webkit-text-fill-color: transparent;
 	animation: shine 7s linear infinite;
 }
 
@@ -732,6 +733,14 @@ h3 {
 	border: 1px solid var(--line);
 	color: var(--muted);
 	background: rgba(255, 255, 255, 0.02);
+}
+
+.project-thumb {
+	width: 100%;
+	aspect-ratio: 1866 / 892;
+	object-fit: cover;
+	border-radius: var(--radius);
+	border: 1px solid var(--line);
 }
 
 .project-domain {
@@ -1871,7 +1880,6 @@ body.has-cursor .project {
 	display: inline-block;
 	opacity: 0;
 	transform: translateY(0.5em) rotateX(-70deg);
-	filter: blur(6px);
 	animation: letter-in 0.75s var(--ease) forwards;
 	animation-delay: calc(var(--i) * 38ms + 0.15s);
 	transform-origin: 50% 100%;
@@ -1882,13 +1890,13 @@ body.has-cursor .project {
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
+	-webkit-text-fill-color: transparent;
 }
 
 @keyframes letter-in {
 	to {
 		opacity: 1;
 		transform: none;
-		filter: none;
 	}
 }
 

@@ -8,7 +8,7 @@
 const USER = "NischalShrestha07";
 const EMAIL = "nischalshrestha800@gmail.com";
 const API = "https://api.github.com/users/" + USER;
-const CONTRIB_API = "https://github-contributions-api.deno.dev/" + USER + ".json";
+const CONTRIB_API = "https://github-contributions-api.jogruber.de/v4/" + USER + "?y=last";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const fine = matchMedia("(pointer: fine)").matches;
@@ -314,7 +314,18 @@ async function loadLanguages(own) {
 }
 
 /* ── Contribution calendar (real GitHub data) ── */
-const LEVELS = { NONE: 0, FIRST_QUARTILE: 1, SECOND_QUARTILE: 2, THIRD_QUARTILE: 3, FOURTH_QUARTILE: 4 };
+// GitHub itself only exposes this graph as an uncached HTML fragment on
+// github.com with no CORS header, so a static site has to go through a
+// third-party mirror. jogruber's is the actively-maintained one as of writing.
+function groupIntoWeeks(days) {
+	if (!days.length) return [];
+	const firstDow = new Date(days[0].date + "T00:00:00").getDay(); // 0 = Sunday, matches GitHub's grid
+	const padded = Array(firstDow).fill(null).concat(days);
+	while (padded.length % 7) padded.push(null);
+	const weeks = [];
+	for (let i = 0; i < padded.length; i += 7) weeks.push(padded.slice(i, i + 7));
+	return weeks;
+}
 
 async function loadCalendar() {
 	const cal = $("#calendar");
@@ -333,9 +344,9 @@ async function loadCalendar() {
 }
 
 function renderCalendar(cal, data) {
-	const weeks = data.contributions;           // 53 weeks × 7 days, oldest first
-	const days = weeks.flat();
-	const total = data.totalContributions ?? days.reduce((s, d) => s + d.contributionCount, 0);
+	const days = data.contributions;             // flat, oldest first
+	const weeks = groupIntoWeeks(days);
+	const total = data.total?.lastYear ?? days.reduce((s, d) => s + d.count, 0);
 
 	// Streaks — only count days up to today, not the padded future tail
 	const today = new Date().toISOString().slice(0, 10);
@@ -343,18 +354,18 @@ function renderCalendar(cal, data) {
 
 	let longest = 0, run = 0;
 	past.forEach((d) => {
-		run = d.contributionCount > 0 ? run + 1 : 0;
+		run = d.count > 0 ? run + 1 : 0;
 		if (run > longest) longest = run;
 	});
 
 	let current = 0;
 	for (let i = past.length - 1; i >= 0; i--) {
-		if (past[i].contributionCount > 0) current++;
+		if (past[i].count > 0) current++;
 		else if (i < past.length - 1) break;   // today being empty doesn't break the streak yet
 	}
 
-	const active = past.filter((d) => d.contributionCount > 0).length;
-	const best = past.reduce((m, d) => (d.contributionCount > m.contributionCount ? d : m), past[0]);
+	const active = past.filter((d) => d.count > 0).length;
+	const best = past.reduce((m, d) => (d.count > m.count ? d : m), past[0]);
 
 	// Month labels, one per week column where the month changes
 	const months = weeks.map((week, i) => {
@@ -369,7 +380,7 @@ function renderCalendar(cal, data) {
 	countUp($("#streakCurrent"), current);
 	countUp($("#streakLongest"), longest);
 	countUp($("#daysActive"), active);
-	countUp($("#bestDay"), best ? best.contributionCount : 0);
+	countUp($("#bestDay"), best ? best.count : 0);
 
 	if (!cal) return;
 
@@ -377,9 +388,9 @@ function renderCalendar(cal, data) {
 		<div class="cal-week">${week.map((d, di) => {
 			if (!d) return `<i class="cal-day" style="visibility:hidden"></i>`;
 			const delay = reduced ? 0 : (wi * 7 + di) * 0.7;
-			return `<i class="cal-day l${LEVELS[d.contributionLevel] ?? 0}"
+			return `<i class="cal-day l${d.level ?? 0}"
 				style="animation-delay:${delay}ms"
-				data-date="${d.date}" data-count="${d.contributionCount}"></i>`;
+				data-date="${d.date}" data-count="${d.count}"></i>`;
 		}).join("")}</div>`).join("");
 
 	cal.innerHTML = `
@@ -717,6 +728,27 @@ const PROJECT_DETAILS = {
 			"Middleware that fails closed, not open",
 			"Drop-in package used across the systems on this page"],
 	},
+	"Subidha Gas ERP": {
+		problem: "An LPG distributor ran four separate Firebase HTML tools with no shared database, so plant intake, cylinder counts and vendor payments could silently drift out of sync.",
+		built: ["Transaction-first ledgers — cylinder and bank balances derived from history, never stored as a column",
+			"Full tanker workflow: gate entry, weighbridge, compass validation, bulk LPG intake",
+			"Vendor orders, dispatch and returns with a shared cheque register spanning payments and bank reconciliation",
+			"Role-gated stages so a gatekeeper can't skip to weighbridge before compass validation"],
+	},
+	"Pearl Makeup Studio CMS": {
+		problem: "A makeup studio and academy needed one place to manage its site content plus every booking, admission and contact enquiry coming in.",
+		built: ["Full CMS over services, packages, courses and gallery, with a reusable drag-order + active-toggle pattern",
+			"Media library with folders, soft-delete trash and URL-based import",
+			"Booking, admission and contact inquiries each with a status/comment update trail",
+			"Two-tier admin roles — content admins vs. a superadmin gate for user management and site settings"],
+	},
+	"Orchid-CMS": {
+		problem: "A salon and academy needed a public site that felt custom, plus an admin panel non-technical staff could actually run — without forcing one rendering stack to do both jobs.",
+		built: ["Inertia + React public site sharing one Laravel backend with a plain Blade admin CMS",
+			"Repeating active/ordered/bulk-action pattern across every content type (services, specialists, testimonials, gallery, blog, academy classes)",
+			"Centralized media library — S3 + local disks, HEIC/TIFF auto-converted to WebP, SSRF-guarded remote URL import",
+			"Flexible per-page content blocks so new sections don't need a migration every time"],
+	},
 };
 
 function closeModal() {
@@ -741,9 +773,16 @@ function initProjectModal() {
 		const card = e.target.closest(".project");
 		if (!card) return;
 
+		const link = $("a.arrow", card);
+		if (link) {
+			if (!e.target.closest("a")) window.open(link.href, "_blank", "noopener,noreferrer");
+			return;
+		}
+
 		const title = $("h3", card).innerHTML;
 		const domain = $(".project-domain", card).textContent;
-		const summary = $("p", card).textContent;
+		const summaryEl = $("p", card);
+		const summary = summaryEl ? summaryEl.textContent : "";
 		const tags = $(".tags", card).innerHTML;
 		const detail = PROJECT_DETAILS[title];
 
@@ -751,7 +790,7 @@ function initProjectModal() {
 			<button class="modal-close" type="button" aria-label="Close">✕</button>
 			<span class="project-domain">${domain}</span>
 			<h3>${title}</h3>
-			<p class="lead">${summary}</p>
+			${summary ? `<p class="lead">${summary}</p>` : ""}
 			<div class="tags">${tags}</div>
 			${detail ? `
 				<h4>The problem</h4>
@@ -1153,7 +1192,10 @@ function initNeuralField() {
 /* ── Boot the motion layer ── */
 document.addEventListener("DOMContentLoaded", () => {
 	initPreloader();
-	initSplitHeadline();
+	// Splitting into per-letter spans before the webfont swaps in makes the
+	// animating (transform + background-clip:text) layer repaint mid-flight,
+	// which briefly doubles the glyph. Wait for the real font first.
+	document.fonts && document.fonts.ready ? document.fonts.ready.then(initSplitHeadline) : initSplitHeadline();
 	initCursor();
 	initGrain();
 	initNeuralField();
