@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Narayan Shrestha — Backend Developer · CV</title>
+	<meta name="description" content="CV of Narayan Shrestha, Laravel backend developer based in Biratnagar, Nepal.">
+	<!--
+		This file is the CV source. Regenerate CV_NarayanShrestha.pdf after editing:
+
+		chromium --headless --disable-gpu --no-pdf-header-footer \
+			--print-to-pdf=CV_NarayanShrestha.pdf cv.html
+
+		Each .page must stay <= 297mm tall or it spills onto an extra PDF sheet.
+		Check with: pdfinfo CV_NarayanShrestha.pdf | grep Pages   (must say 2)
+	-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+		rel="stylesheet">
+	<style>
+		:root {
+			--ink: #101828;
+			--ink-2: #344054;
+			--muted: #667085;
+			--dim: #98a2b3;
+			--line: #e4e7ec;
+			--accent: #0b7c8c;
+			--accent-soft: #e6f6f8;
+			--link: #1552c9;
+			--sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+			--mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+
+		body {
+			margin: 0;
+			background: #f4f5f7;
+			color: var(--ink-2);
+			font: 400 10pt/1.45 var(--sans);
+		}
+
+		.page {
+			width: 210mm;
+			min-height: 297mm;
+			margin: 0 auto 8mm;
+			padding: 12mm 13mm 10mm;
+			background: #fff;
+			box-shadow: 0 8px 30px rgba(16, 24, 40, .12);
+		}
+
+		/* ── header ───────────────────────────── */
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			gap: 6mm;
+			padding-bottom: 3.4mm;
+			border-bottom: 2px solid var(--ink);
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 22pt;
+			font-weight: 800;
+			letter-spacing: -.02em;
+			color: var(--ink);
+			line-height: 1.05;
+		}
+
+		.role {
+			margin: 1.6mm 0 0;
+			font: 400 11pt/1.35 var(--sans);
+			white-space: nowrap;
+			color: var(--ink-2);
+		}
+
+		.role span {
+			color: var(--dim);
+			padding: 0 .4mm;
+		}
+
+		.contact {
+			text-align: right;
+			font-size: 9pt;
+			line-height: 1.5;
+			color: var(--ink-2);
+			white-space: nowrap;
+		}
+
+		.contact a {
+			color: var(--link);
+			text-decoration: none;
+		}
+
+		.contact b {
+			color: var(--dim);
+			font-weight: 500;
+			display: inline-block;
+			min-width: 15mm;
+			text-align: left;
+			font-family: var(--mono);
+			font-size: 7.6pt;
+			text-transform: uppercase;
+			letter-spacing: .06em;
+		}
+
+		/* ── sections ─────────────────────────── */
+		section {
+			margin-top: 4.4mm;
+		}
+
+		h2 {
+			margin: 0 0 2.6mm;
+			font: 700 8.8pt/1 var(--sans);
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			color: var(--ink);
+			padding-bottom: 1.5mm;
+			border-bottom: .8pt solid var(--ink);
+		}
+
+		p {
+			margin: 0;
+		}
+
+		.lead {
+			font-size: 9.9pt;
+			color: var(--ink-2);
+		}
+
+		.lead strong {
+			color: var(--ink);
+			font-weight: 600;
+		}
+
+		/* ── entries ──────────────────────────── */
+		.entry {
+			margin-bottom: 3mm;
+			break-inside: avoid;
+		}
+
+		.entry:last-child {
+			margin-bottom: 0;
+		}
+
+		.entry-head {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			gap: 6mm;
+		}
+
+		.entry-head h3 {
+			margin: 0;
+			font-size: 11pt;
+			font-weight: 700;
+			color: var(--ink);
+		}
+
+		.org {
+			margin: .5mm 0 1.4mm;
+			font-size: 9.4pt;
+			color: var(--muted);
+		}
+
+		.org a {
+			color: var(--link);
+			text-decoration: none;
+		}
+
+		.when {
+			flex: none;
+			font: 500 9pt var(--sans);
+			color: var(--muted);
+			white-space: nowrap;
+		}
+
+		ul {
+			margin: 0;
+			padding-left: 4.6mm;
+			list-style: none;
+		}
+
+		li {
+			position: relative;
+			margin-bottom: .6mm;
+			font-size: 9.4pt;
+		}
+
+		li::before {
+			content: "–";
+			position: absolute;
+			left: -4.6mm;
+			color: var(--dim);
+		}
+
+		li strong {
+			color: var(--ink);
+			font-weight: 600;
+		}
+
+		/* ── skills ───────────────────────────── */
+		.skills {
+			display: grid;
+			grid-template-columns: 24mm 1fr;
+			gap: 2.2mm 4mm;
+			align-items: baseline;
+		}
+
+		.skills dt {
+			font: 600 9pt/1.45 var(--sans);
+			color: var(--ink);
+		}
+
+		.skills dd {
+			margin: 0;
+			font-size: 9.6pt;
+			line-height: 1.45;
+			color: var(--ink-2);
+		}
+
+		.langs {
+			font-size: 9.6pt;
+			color: var(--ink-2);
+		}
+
+		/* ── project cards ────────────────────── */
+		.projects {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4.4mm 6mm;
+		}
+
+		.proj {
+			break-inside: avoid;
+			padding-left: 3.2mm;
+			border-left: .8pt solid var(--line);
+		}
+
+		.proj h3 {
+			margin: 0;
+			font-size: 9.9pt;
+			font-weight: 700;
+			line-height: 1.25;
+			color: var(--ink);
+		}
+
+		.domain {
+			display: inline-block;
+			margin-left: .8mm;
+			padding: .15mm 1.3mm;
+			border-radius: 2px;
+			background: #f0f2f5;
+			vertical-align: 1.5pt;
+			font: 600 6.9pt/1.5 var(--sans);
+			text-transform: uppercase;
+			letter-spacing: .07em;
+			color: var(--muted);
+		}
+
+		.proj-link,
+		.proj-note {
+			display: block;
+			margin-top: .5mm;
+			font: 400 7.8pt/1.35 var(--mono);
+			word-break: break-all;
+		}
+
+		.proj-link {
+			color: var(--link);
+			text-decoration: none;
+		}
+
+		.proj-note {
+			color: var(--dim);
+		}
+
+		.proj p {
+			margin: 1.1mm 0 0;
+			font-size: 9.2pt;
+			line-height: 1.4;
+			color: var(--ink-2);
+		}
+
+		.stack {
+			margin-top: 1.1mm;
+			font: 400 7.9pt var(--mono);
+			color: var(--dim);
+		}
+
+		footer a {
+			color: var(--link);
+			text-decoration: none;
+		}
+
+		footer {
+			margin-top: 6mm;
+			padding-top: 2.4mm;
+			border-top: 1px solid var(--line);
+			font: 400 8pt var(--mono);
+			color: var(--dim);
+			display: flex;
+			justify-content: space-between;
+		}
+
+		@page {
+			size: A4;
+			margin: 0;
+		}
+
+		@media print {
+			body {
+				background: #fff;
+			}
+
+			.page {
+				margin: 0;
+				box-shadow: none;
+				page-break-after: always;
+			}
+
+			.page:last-child {
+				page-break-after: auto;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- ══════════════ PAGE 1 ══════════════ -->
+	<div class="page">
+
+		<header>
+			<div>
+				<h1>Narayan Shrestha</h1>
+				<p class="role">Backend Developer <span>·</span> Laravel <span>·</span> APIs <span>·</span>
+					Multi-Tenancy</p>
+			</div>
+			<div class="contact">
+				<div>Biratnagar, Nepal</div>
+				<div><a href="tel:+9779819375809">+977 981-937-5809</a></div>
+				<div><a href="mailto:nischalshrestha800@gmail.com">nischalshrestha800@gmail.com</a></div>
+				<div><a target="_blank" rel="noreferrer"
+						href="https://github.com/NischalShrestha07">github.com/NischalShrestha07</a></div>
+				<div><a target="_blank" rel="noreferrer"
+						href="https://www.linkedin.com/in/narayanshrestha07/">linkedin.com/in/narayanshrestha07</a></div>
+				<div><a target="_blank" rel="noreferrer"
+						href="https://nischalshrestha07.github.io">nischalshrestha07.github.io</a></div>
+			</div>
+		</header>
+
+		<section>
+			<h2>Profile</h2>
+			<p class="lead">
+				Laravel backend developer, three years in. I build the half of a product nobody demos: the schema,
+				the permission layer, the API contract. Ten production systems so far, spanning gas distribution,
+				CMS, ticketing, HR, payments, loyalty and e-commerce. Most are multi-tenant and all of them run
+				behind role-based access control. Currently at RatoGuras, with a BE in Computer Engineering from
+				Purbanchal University. What I care about is a system in its second year: migrations you can read,
+				abstractions that stay boring, and an API someone else can pick up without asking me first.
+			</p>
+		</section>
+
+		<section>
+			<h2>Technical Skills</h2>
+			<dl class="skills">
+				<dt>Backend</dt>
+				<dd>PHP 8, Laravel, MySQL, REST APIs, Eloquent, Livewire, Redis, queues and scheduled jobs,
+					hand-written SQL</dd>
+				<dt>Architecture</dt>
+				<dd>Role-based access control, multi-tenancy, API design and versioning, token auth, schema
+					migration, query optimisation, third-party integrations</dd>
+				<dt>Frontend</dt>
+				<dd>JavaScript, Blade, Vue.js, Tailwind, Bootstrap, jQuery, HTML, CSS</dd>
+				<dt>Tooling</dt>
+				<dd>Git, Docker, Linux, Composer, Postman</dd>
+			</dl>
+		</section>
+
+		<section>
+			<h2>Experience</h2>
+
+			<div class="entry">
+				<div class="entry-head">
+					<h3>Backend Developer</h3>
+					<span class="when">2024 — Present</span>
+				</div>
+				<p class="org">RatoGuras — Biratnagar, Nepal · <a target="_blank" rel="noreferrer" href="https://ratoguras.com">ratoguras.com</a></p>
+				<ul>
+					<li>Build and maintain Laravel business systems for client organisations, owning
+						the backend end to end: data model, migrations, permission layer and API surface.</li>
+					<li>Delivered Subidha Gas ERP, a multi-branch gas distribution platform covering
+						inventory, cylinder tracking, billing and staff roles, running in production.</li>
+					<li>Design role-and-permission engines and tenant isolation so one codebase serves
+						multiple clients without leaking data between them.</li>
+					<li>Write RESTful APIs with token auth, versioning and rate limiting, documented
+						so frontend and mobile developers can integrate without hand-holding.</li>
+					<li>Optimise slow queries and N+1 hotspots, add indexing and caching, keep migrations reversible.
+					</li>
+				</ul>
+			</div>
+
+			<div class="entry">
+				<div class="entry-head">
+					<h3>Laravel Intern → Backend Developer</h3>
+					<span class="when">AUG 2023 — FEB 2024</span>
+				</div>
+				<p class="org">IT Service Nepal — Biratnagar, Nepal · <a
+						target="_blank" rel="noreferrer" href="https://itservicenepal.com">itservicenepal.com</a></p>
+				<ul>
+					<li>Built backend features for e-commerce and financial applications, moving from
+						intern to contributing developer inside six months.</li>
+					<li>Implemented API integrations with third-party services, handling auth,
+						retries and error surfaces.</li>
+					<li>Database optimisation — schema refactors, indexing and migration cleanup on
+						live datasets.</li>
+					<li>Contributed to payment management, CMS and HR modules in a senior-led team.</li>
+				</ul>
+			</div>
+
+			<div class="entry">
+				<div class="entry-head">
+					<h3>Freelance Backend Developer</h3>
+					<span class="when">2023 — 2024</span>
+				</div>
+				<p class="org">Independent — Biratnagar, Nepal</p>
+				<ul>
+					<li>Engineered and maintained Laravel applications for direct clients, including
+						multi-tenant systems and e-commerce platforms.</li>
+					<li>Scoped requirements with non-technical clients, turned them into data models and working
+						screens, handed over documented. Shipped gym management, CMS and ticketing builds.</li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- ══════════════ PAGE 2 ══════════════ -->
+	<div class="page">
+
+		<section style="margin-top:0">
+			<h2>Selected Work</h2>
+			<div class="projects">
+				<div class="proj">
+					<h3>Subidha Gas ERP <span class="domain">Energy</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://marutigas.ratoguras.com/">marutigas.ratoguras.com</a>
+					<p>Gas distribution ERP — inventory and cylinder tracking, customer accounts, billing, and
+						branch/staff management under granular role-based access.</p>
+					<p class="stack">Laravel · MySQL · RBAC · multi-tenant</p>
+				</div>
+
+				<div class="proj">
+					<h3>Rathicol Sathi Yojana <span class="domain">Rewards</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://rathinew.hamro.com/">rathinew.hamro.com</a>
+					<p>Loyalty and rewards platform for a dealer network — member enrolment, point accrual against
+						purchases, redemption workflow and admin reporting.</p>
+					<p class="stack">Laravel · MySQL · RBAC · REST API</p>
+				</div>
+
+				<div class="proj">
+					<h3>Pearl Makeup Studio CMS <span class="domain">Beauty</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://pearlmakeupstudio.com">pearlmakeupstudio.com</a>
+					<p>Custom CMS for a makeup studio — service catalogue, gallery, booking enquiries and a
+						content-editable public site managed by non-technical staff.</p>
+					<p class="stack">Laravel · Blade · MySQL · RBAC</p>
+				</div>
+
+				<div class="proj">
+					<h3>Lokta App Ticketing System <span class="domain">Support</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://support.loktaapp.com/">support.loktaapp.com</a>
+					<p>Support desk — ticket intake, assignment and status pipeline, threaded replies, priority
+						handling and agent-level permissions.</p>
+					<p class="stack">Laravel · MySQL · RBAC · queues</p>
+				</div>
+
+				<div class="proj">
+					<h3>Payment Management System <span class="domain">Fintech</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://pallavipms.nep.onl/">pallavipms.nep.onl</a>
+					<p>Payment and collection tracking — invoices, instalment schedules, receipts,
+						outstanding-balance reporting and an audit trail on every transaction.</p>
+					<p class="stack">Laravel · MySQL · RBAC · reporting</p>
+				</div>
+
+				<div class="proj">
+					<h3>Lahar Ecommerce App <span class="domain">Commerce</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://laharhub.com/">laharhub.com</a>
+					<p>E-commerce backend — catalogue and variants, cart and checkout, order lifecycle, and a REST
+						API consumed by the client-facing app.</p>
+					<p class="stack">Laravel · MySQL · REST API</p>
+				</div>
+
+				<div class="proj">
+					<h3>Gym Management System <span class="domain">Fitness</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://github.com/NischalShrestha07/Gym-Management-System">github.com/NischalShrestha07/Gym-Management-System</a>
+					<p>Member tracking, subscription plans, attendance logs, payment history and staff management
+						with full role-based access control.</p>
+					<p class="stack">Laravel · MySQL · REST API · RBAC</p>
+				</div>
+
+				<div class="proj">
+					<h3>Social Networking System <span class="domain">Social</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://github.com/NischalShrestha07/DevDoko">github.com/NischalShrestha07/DevDoko</a>
+					<p>User profiles, friend connections, a news feed, real-time messaging, post interactions and a
+						notification system.</p>
+					<p class="stack">Laravel · MySQL · broadcasting · REST API</p>
+				</div>
+
+				<div class="proj">
+					<h3>HRMS <span class="domain">HR</span></h3>
+					<a class="proj-link" target="_blank" rel="noreferrer"
+						href="https://github.com/NischalShrestha07/HRMS-COLLEGE">github.com/NischalShrestha07/HRMS-COLLEGE</a>
+					<p>HR management system — employee records, department and designation hierarchy, attendance,
+						leave requests and approval chains.</p>
+					<p class="stack">Laravel · MySQL · RBAC</p>
+				</div>
+
+				<div class="proj">
+					<h3>Orchid CMS <span class="domain">Salon</span></h3>
+					<span class="proj-note">private client build — source not public</span>
+					<p>Salon website CMS — editable pages, service and pricing management, media library and staff
+						accounts with scoped permissions.</p>
+					<p class="stack">Laravel · Blade · MySQL · RBAC</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Education</h2>
+			<div class="entry">
+				<div class="entry-head">
+					<h3>BE Computer Engineering</h3>
+					<span class="when">2021 — 2025</span>
+				</div>
+				<p class="org">Purbanchal University School of Engineering — Biratnagar, Nepal</p>
+				<ul>
+					<li>Coursework: data structures, algorithms, database management systems, computer networks,
+						software engineering, web development, IoT systems.</li>
+				</ul>
+			</div>
+			<div class="entry">
+				<div class="entry-head">
+					<h3>SEE &amp; +2 Science</h3>
+					<span class="when">2018 — 2021</span>
+				</div>
+				<p class="org">Shree Satyanarayan School — foundations in science, mathematics and electronics.</p>
+			</div>
+		</section>
+
+		<section>
+			<h2>Languages</h2>
+			<p class="langs">English (fluent) &nbsp;·&nbsp; Nepali (native) &nbsp;·&nbsp; Hindi
+				(intermediate)</p>
+		</section>
+
+		<footer>
+			<span>Narayan Shrestha &nbsp;·&nbsp; Backend Developer</span><span><a
+					target="_blank" rel="noreferrer"
+					href="https://nischalshrestha07.github.io">nischalshrestha07.github.io</a></span>
+		</footer>
+	</div>
+
+</body>
+
+</html>
