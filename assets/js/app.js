@@ -563,7 +563,7 @@ const COMMANDS = [
 	{ label: "Projects", hint: "page", href: "projects.html" },
 	{ label: "GitHub activity", hint: "page", href: "github.html" },
 	{ label: "Contact", hint: "page", href: "contact.html" },
-	{ label: "Download résumé", hint: "file", href: "CV_NarayanShrestha.pdf" },
+	{ label: "Download résumé", hint: "file", href: "CV_Narayan.pdf" },
 	{ label: "GitHub profile", hint: "external", href: "https://github.com/NischalShrestha07" },
 	{ label: "LinkedIn", hint: "external", href: "https://www.linkedin.com/in/narayanshrestha07/" },
 	{ label: "Email me", hint: "external", href: "mailto:" + EMAIL },
