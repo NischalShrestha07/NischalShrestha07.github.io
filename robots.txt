@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /test.html
-Disallow: /single.html
 
 Sitemap: https://nischalshrestha07.github.io/sitemap.xml

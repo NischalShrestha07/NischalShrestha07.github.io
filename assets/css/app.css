@@ -45,6 +45,7 @@
 
 html {
 	scroll-behavior: smooth;
+	color-scheme: dark;
 }
 
 body {
@@ -102,6 +103,25 @@ img {
 	max-width: var(--maxw);
 	margin: 0 auto;
 	padding: 0 1.5rem;
+}
+
+/* Keyboard-only shortcut past the header */
+.skip-link {
+	position: absolute;
+	left: 1rem;
+	top: -4rem;
+	z-index: 400;
+	padding: 0.6rem 1rem;
+	border-radius: 9px;
+	border: 1px solid var(--line-strong);
+	background: var(--panel);
+	color: var(--text);
+	font-size: 0.9rem;
+	transition: top 0.2s var(--ease);
+}
+
+.skip-link:focus {
+	top: 1rem;
 }
 
 .section {
@@ -1300,6 +1320,7 @@ h3 {
 
 /* ── Light theme ── */
 :root[data-theme="light"] {
+	color-scheme: light;
 	--bg: #f4f5f7;
 	--bg-2: #ffffff;
 	--panel: #ffffff;

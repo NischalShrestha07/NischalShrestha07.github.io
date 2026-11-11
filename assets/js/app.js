@@ -81,6 +81,7 @@ function initHeader() {
 		const href = a.getAttribute("href");
 		if (href === page || (page === "index.html" && href === "index.html")) {
 			a.classList.add("active");
+			a.setAttribute("aria-current", "page");
 		}
 	});
 
@@ -519,6 +520,9 @@ function initTheme() {
 			? `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>`
 			: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>`;
 		btn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+
+		const meta = document.querySelector('meta[name="theme-color"]');
+		if (meta) meta.content = dark ? "#101215" : "#f4f5f7";
 	};
 	paint();
 
