@@ -226,7 +226,7 @@ const LANG_COLORS = {
 	Java: "#b07219", C: "#555555", "C++": "#f34b7d", Shell: "#89e051", Dockerfile: "#384d54",
 	Dart: "#00b4ab", Kotlin: "#a97bff", Ruby: "#701516", Go: "#00add8",
 };
-const langColor = (l) => LANG_COLORS[l] || "#2ee6ff";
+const langColor = (l) => LANG_COLORS[l] || "#7da2c9";
 
 async function loadGitHub() {
 	const needsProfile = $("[data-gh]");
@@ -338,7 +338,7 @@ async function loadCalendar() {
 	} catch (err) {
 		console.warn("Calendar load failed:", err);
 		if (cal) {
-			cal.innerHTML = `<img src="https://ghchart.rshah.org/35f0a6/${USER}" alt="GitHub contribution graph for ${USER}" style="width:100%">`;
+			cal.innerHTML = `<img src="https://ghchart.rshah.org/7aae8b/${USER}" alt="GitHub contribution graph for ${USER}" style="width:100%">`;
 		}
 	}
 }
@@ -1097,8 +1097,8 @@ function initNeuralField() {
 	function frame() {
 		ctx.clearRect(0, 0, w, h);
 
-		const accent = css("--cyan") || "#2ee6ff";
-		const hot = css("--green") || "#35f0a6";
+		const accent = css("--cyan") || "#7da2c9";
+		const hot = css("--green") || "#8db3a3";
 		const base = 0.14 + excitement * 0.3;
 		excitement *= 0.94;
 
